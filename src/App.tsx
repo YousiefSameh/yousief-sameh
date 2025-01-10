@@ -1,6 +1,8 @@
+import AppRouter from "./routes/app.routes"
+
 const App = () => {
   return (
-    <div className="text-3xl font-bold underline">يا مرحب يا مرحب</div>
+    <AppRouter />
   )
 }
 

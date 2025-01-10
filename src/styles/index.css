@@ -6,3 +6,9 @@
 html {
   font-family: 'Tajawal', sans-serif;
 }
+
+@layer base {
+  .btn-primary {
+    @apply inline-block px-6 py-3 text-xl font-bold text-white bg-primary-color rounded-lg hover:bg-hover-color transition duration-300;
+  }
+}

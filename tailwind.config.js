@@ -13,6 +13,7 @@ export default {
         "background-contain-color": "#383838",
         "background-cards-color": "#202021",
         "background-color": "#1E1E1E",
+        "background-container-color": "#1E1E1E",
       },
       boxShadow: {
         "card-shadow": "0px 0px 4px 2px rgb(17, 17, 17, 0.25)",
