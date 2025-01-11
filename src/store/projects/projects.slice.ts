@@ -1,21 +1,23 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 // import actionGetProjects from "./action/action.getProjects";
 import { TLoading } from "../../types/general";
 import { TProject } from "../../types/projects";
 
 interface initialStateType {
-  projects: TProject[];
-  loading: TLoading;
-  error: string | null;
+	projects: TProject[];
+	filteredProjects: TProject[];
+	activeCategory: string;
+	loading: TLoading;
+	error: string | null;
 }
 
 const initialState: initialStateType = {
 	projects: [
 		{
 			id: 1,
-			projectTitle: "Fiore Website",
+			projectTitle: "موقع فيوري",
 			projectSubtitle:
-				"Fiore is a flower shop website offering beautiful, fresh bouquets and floral arrangements for every occasion",
+				"فيوري هو موقع لمحل زهور يقدم باقات زهور وترتيبات زهرية جميلة وطازجة لكل المناسبات",
 			projectURL: "https://fiore-one.vercel.app/",
 			projectGithubURL: "https://github.com/YousiefSameh/Fiore",
 			projectImage: "Fiore.png",
@@ -23,9 +25,9 @@ const initialState: initialStateType = {
 		},
 		{
 			id: 2,
-			projectTitle: "Medstar Website",
+			projectTitle: "موقع ميدستار",
 			projectSubtitle:
-				"Medstar: Compassionate healthcare, advanced treatments, trusted medical expertise.",
+				"ميدستار: رعاية صحية رحيمة، علاجات متقدمة، وخبرة طبية موثوقة.",
 			projectURL: "https://medstarwebiste.web.app/",
 			projectGithubURL: "https://github.com/YousiefSameh/MedstarWebsite",
 			projectImage: "Medstar.png",
@@ -33,110 +35,123 @@ const initialState: initialStateType = {
 		},
 		{
 			id: 3,
-			projectTitle: "Ecommerce Website",
+			projectTitle: "موقع التجارة الإلكترونية",
 			projectSubtitle:
-				"Topico is an e-commerce website offering a wide range of products, from electronics to home goods.",
+				"توبيكو هو موقع تجارة إلكترونية يقدم مجموعة واسعة من المنتجات، من الإلكترونيات إلى الأدوات المنزلية.",
 			projectURL: "https://ecommerce-wheat-eta.vercel.app/",
 			projectGithubURL: "https://github.com/YousiefSameh/Ecommerce",
 			projectImage: "ecommerce.png",
-			category: "js",
+			category: "javascript",
 		},
 		{
 			id: 4,
-			projectTitle: "Quiz Website",
+			projectTitle: "موقع الاختبارات",
 			projectSubtitle:
-				"A quiz website offering fun, interactive quizzes on various topics to test and improve your knowledge.",
+				"موقع اختبارات ممتع وتفاعلي يقدم اختبارات متنوعة لاختبار وتحسين معرفتك.",
 			projectURL: "https://quiz-app-ecru-six.vercel.app/",
 			projectGithubURL: "https://github.com/YousiefSameh/QuizApp",
 			projectImage: "quizzApp.png",
-			category: "js",
+			category: "javascript",
 		},
 		{
 			id: 5,
-			projectTitle: "CRUD System",
+			projectTitle: "نظام CRUD",
 			projectSubtitle:
-				"A CRUD system website allows users to create, read, update, and delete data efficiently online.",
+				"موقع نظام CRUD يتيح للمستخدمين إنشاء وقراءة وتحديث وحذف البيانات بكفاءة عبر الإنترنت.",
 			projectURL: "https://crudproject-yousief-samehs-projects.vercel.app/",
 			projectGithubURL: "https://github.com/YousiefSameh/CRUD_Project",
 			projectImage: "CRUD.png",
-			category: "js",
+			category: "javascript",
 		},
 		{
 			id: 6,
-			projectTitle: "To Do List Website",
+			projectTitle: "موقع قائمة المهام",
 			projectSubtitle:
-				"A To Do List website helps users organize tasks, set priorities, and track progress efficiently.",
+				"موقع قائمة المهام يساعد المستخدمين على تنظيم المهام، تحديد الأولويات، ومتابعة التقدم بكفاءة.",
 			projectURL: "https://to-do-list-virid-psi.vercel.app/",
 			projectGithubURL: "https://github.com/YousiefSameh/ToDoList",
 			projectImage: "ToDoList.png",
-			category: "js",
+			category: "javascript",
 		},
 		{
 			id: 7,
-			projectTitle: "GuessTheWord App",
+			projectTitle: "تطبيق خمن الكلمة",
 			projectSubtitle:
-				"Guess The Word is a fun, interactive website where players solve word puzzles and challenges.",
+				"خمن الكلمة هو موقع ممتع وتفاعلي يقدم ألغاز وتحديات كلمات.",
 			projectURL: "https://guess-the-word-neon-two.vercel.app/",
 			projectGithubURL: "https://github.com/YousiefSameh/GuessTheWord",
 			projectImage: "GuessTheWord.png",
-			category: "js",
+			category: "javascript",
 		},
 		{
 			id: 8,
-			projectTitle: "Kudzoka Website",
+			projectTitle: "موقع كودزوكا",
 			projectSubtitle:
-				"Kudzoka is a delivery platform that ensures fast, reliable, and secure transport of goods and packages.",
+				"كودزوكا هو منصة توصيل تضمن نقل سريع وموثوق وآمن للبضائع والطرود.",
 			projectURL: "https://kudzokawebsite.vercel.app/",
 			projectGithubURL: "https://github.com/YousiefSameh/KudzokaWebsite",
 			projectImage: "Kudzoka.png",
-			category: "css",
+			category: "html & css",
 		},
 		{
 			id: 9,
-			projectTitle: "Criativo Website",
+			projectTitle: "موقع كرياتيفو",
 			projectSubtitle:
-				"Criativo is a dynamic creative agency website offering innovative design, branding, and marketing solutions.",
+				"كرياتيفو هو موقع لوكالة إبداعية ديناميكية يقدم حلول تصميم، علامة تجارية، وتسويق مبتكرة.",
 			projectURL: "https://criativo-website-rho.vercel.app/",
 			projectGithubURL: "https://github.com/YousiefSameh/CriativoWebsite",
 			projectImage: "Criativo.png",
-			category: "css",
+			category: "html & css",
 		},
 		{
 			id: 9,
-			projectTitle: "Techno Bay Website",
+			projectTitle: "موقع تيكنو باي",
 			projectSubtitle:
-				"Techno Bay is an online store that offers a wide range of electronics, gadgets, and accessories.",
+				"تيكنو باي هو متجر إلكتروني يقدم مجموعة واسعة من الإلكترونيات، الأدوات، والإكسسوارات.",
 			projectURL: "https://techno-bay.vercel.app/",
 			projectGithubURL: "https://github.com/YousiefSameh/TechnoBay",
 			projectImage: "TechnoBay.png",
 			category: "react",
 		},
 	],
+	filteredProjects: [],
+	activeCategory: "all",
 	loading: "idle",
 	error: null,
 };
 
-
 const projectsSlice = createSlice({
 	name: "projects",
 	initialState,
-	reducers: {},
+	reducers: {
+		setActiveCategory: (state, action: PayloadAction<string>) => {
+      state.activeCategory = action.payload;
+      if (action.payload === "all") {
+        state.filteredProjects = state.projects;
+      } else {
+        state.filteredProjects = state.projects.filter(
+          (project) => project.category === action.payload
+        );
+      }
+    },
+	},
 	// extraReducers: (builder) => {
-  //   builder.addCase(actionGetProjects.pending, (state) => {
-  //     state.loading = "pending";
-  //     state.error = null;
-  //   });
-  //   builder.addCase(actionGetProjects.fulfilled, (state, action) => {
-  //     state.loading = "succeeded";
-  //     state.projects = action.payload;
-  //   });
-  //   builder.addCase(actionGetProjects.rejected, (state, action) => {
-  //     state.loading = "failed";
-  //     if (action.payload && typeof action.payload === "string") {
-  //       state.error = action.payload;
-  //     }
-  //   });
-  // },
+	//   builder.addCase(actionGetProjects.pending, (state) => {
+	//     state.loading = "pending";
+	//     state.error = null;
+	//   });
+	//   builder.addCase(actionGetProjects.fulfilled, (state, action) => {
+	//     state.loading = "succeeded";
+	//     state.projects = action.payload;
+	//   });
+	//   builder.addCase(actionGetProjects.rejected, (state, action) => {
+	//     state.loading = "failed";
+	//     if (action.payload && typeof action.payload === "string") {
+	//       state.error = action.payload;
+	//     }
+	//   });
+	// },
 });
 
+export const { setActiveCategory } = projectsSlice.actions;
 export default projectsSlice.reducer;

@@ -5,7 +5,7 @@ import { TProject } from "../../../types/projects";
 type TResponse = TProject[];
 
 const actionGetProjects = createAsyncThunk(
-  "products/actGetProductsByCatPrefix",
+  "projects/actGetProjects",
   async (_, thunkAPI) => {
     const { rejectWithValue } = thunkAPI;
     try {
