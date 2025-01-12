@@ -6,7 +6,7 @@ import { useEffect } from "react";
 
 const ProjectContainer = () => {
 	const dispatch = useDispatch();
-	const { filteredProjects, activeCategory } = useSelector(() => store.getState().projects);	
+	const { filteredProjects, activeCategory } = useSelector(() => store.getState().projects)
 	useEffect(() => {
 		dispatch(setActiveCategory("all"));
 	}, [dispatch]);

@@ -104,7 +104,7 @@ const initialState: initialStateType = {
 			category: "html & css",
 		},
 		{
-			id: 9,
+			id: 10,
 			projectTitle: "موقع تيكنو باي",
 			projectSubtitle:
 				"تيكنو باي هو متجر إلكتروني يقدم مجموعة واسعة من الإلكترونيات، الأدوات، والإكسسوارات.",
@@ -125,15 +125,43 @@ const projectsSlice = createSlice({
 	initialState,
 	reducers: {
 		setActiveCategory: (state, action: PayloadAction<string>) => {
-      state.activeCategory = action.payload;
-      if (action.payload === "all") {
-        state.filteredProjects = state.projects;
-      } else {
-        state.filteredProjects = state.projects.filter(
-          (project) => project.category === action.payload
-        );
-      }
-    },
+			state.activeCategory = action.payload;
+			if (action.payload === "all") {
+				state.filteredProjects = state.projects;
+			} else {
+				state.filteredProjects = state.projects.filter(
+					(project) => project.category === action.payload
+				);
+			}
+		},
+		addProject: (state, action: PayloadAction<TProject>) => {
+			state.projects.push(action.payload);
+			if (
+				state.activeCategory === "all" ||
+				action.payload.category === state.activeCategory
+			) {
+				state.filteredProjects.push(action.payload);
+			}
+		},
+		editProject: (state, action: PayloadAction<TProject>) => {
+			const updatedProject = action.payload;
+			const projectIndex = state.projects.findIndex(
+				(project) => project.id === updatedProject.id
+			);
+			if (projectIndex !== -1) {
+				state.projects[projectIndex] = updatedProject;
+
+				const filteredIndex = state.filteredProjects.findIndex(
+					(project) => project.id === updatedProject.id
+				);
+				if (filteredIndex !== -1) {
+					state.filteredProjects[filteredIndex] = updatedProject;
+				}
+			}
+		},
+		deleteProject: (state, action: PayloadAction<number>) => {
+      state.projects = state.projects.filter((project) => project.id !== action.payload);
+		},
 	},
 	// extraReducers: (builder) => {
 	//   builder.addCase(actionGetProjects.pending, (state) => {
@@ -153,5 +181,5 @@ const projectsSlice = createSlice({
 	// },
 });
 
-export const { setActiveCategory } = projectsSlice.actions;
+export const { setActiveCategory, addProject, editProject, deleteProject } = projectsSlice.actions;
 export default projectsSlice.reducer;

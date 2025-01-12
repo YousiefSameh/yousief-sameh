@@ -9,6 +9,8 @@ import Blogs from "../pages/Blogs";
 import Contact from "../pages/Contact";
 import Error from "../pages/Error";
 import BlogContent from "../pages/BlogContent";
+import HomePageAdmin from "../pages/admin/HomePage.admin";
+import ProjectsPageAdmin from "../pages/admin/ProjectsPage.admin";
 
 const router = createBrowserRouter([
   {
@@ -46,6 +48,14 @@ const router = createBrowserRouter([
       {
         path: "contact",
         element: <Contact />,
+      },
+      {
+        path: "admin/home",
+        element: <HomePageAdmin />
+      },
+      {
+        path: "admin/projects",
+        element: <ProjectsPageAdmin />
       },
     ],
   },
