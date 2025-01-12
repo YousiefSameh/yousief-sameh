@@ -8,6 +8,7 @@ import Projects from "../pages/Projects";
 import Blogs from "../pages/Blogs";
 import Contact from "../pages/Contact";
 import Error from "../pages/Error";
+import BlogContent from "../pages/BlogContent";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,21 @@ const router = createBrowserRouter([
       {
         path: "blogs",
         element: <Blogs />,
+      },
+      {
+        path: "blogs/blog/:id",
+        element: <BlogContent />,
+        loader: ({ params }) => {
+          if (
+            typeof params.id !== "string"
+          ) {
+            throw new Response("Bad Request", {
+              statusText: "Category not found",
+              status: 404,
+            });
+          }
+          return true;
+        },
       },
       {
         path: "contact",

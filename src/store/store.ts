@@ -1,11 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import projects from "./projects/projects.slice";
-import Blogs from "../pages/Blogs";
+import blogs from "./blogs/blogs.slice";
 
 const store = configureStore({
   reducer: {
     projects,
-    Blogs,
+    blogs,
   },
 });
 

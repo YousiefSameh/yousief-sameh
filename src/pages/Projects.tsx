@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { SpecialHeader } from "../components";
-import ProojectsContent from "../components/ProjectContainer";
+import ProjectContainer from "../components/ProjectContainer";
 
 const Projects = () => {
   return (
@@ -51,7 +51,7 @@ const Projects = () => {
       </nav>
       <div className="content">
         <SpecialHeader title="معرض أعمالي" id="projects-title" />
-        <ProojectsContent />
+        <ProjectContainer />
       </div>
       <footer>
         <div className="footer-content mt-6 text-center">

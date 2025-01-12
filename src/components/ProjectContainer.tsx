@@ -75,7 +75,7 @@ const ProjectContainer = () => {
 								}}
 								className="object-cover rounded-lg"
 							/>
-							<div className="tools w-full flex justify-center items-center gap-2 p-4 absolute top-1/2 -translate-y-1/2 z-50 bg-black/60 h-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+							<div className="tools w-full rounded-lg flex justify-center items-center gap-2 p-4 absolute top-1/2 -translate-y-1/2 z-50 bg-black/60 h-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
 								<div
 									className="card github bg-light-card-color dark:bg-dark-card-color p-3 rounded-lg shadow-card-shadow w-fit h-fit ml-4"
 									aria-hidden="true"
