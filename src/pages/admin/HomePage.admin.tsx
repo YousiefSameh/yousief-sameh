@@ -1,11 +1,11 @@
 import { useSelector } from "react-redux";
 import { Link } from "react-router";
-import store from "../../store/store";
+import { RootState } from "../../store/store";
 import { SpecialHeader } from "../../components";
 
 const HomePageAdmin = () => {
-  const { projects } = useSelector(() => store.getState().projects);
-  const { blogs } = useSelector(() => store.getState().blogs);
+  const projects = useSelector((state: RootState) => state.projects.projects);
+	const blogs = useSelector((state: RootState) => state.blogs.blogs);
 	return (
 		<main
 			className="bg-light-container-color dark:bg-dark-container-color border-[2px] border-light-border-color dark:border-dark-border-color p-4 md:p-8 rounded-lg w-full relative"

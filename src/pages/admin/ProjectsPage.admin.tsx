@@ -6,9 +6,10 @@ import { useState } from 'react';
 import { TProject } from '../../types/projects';
 import { deleteProject } from '../../store/projects/projects.slice';
 import DeleteModal from '../../components/DeleteModel';
+import { RootState } from '../../store/store';
 
 const ProjectsPageAdmin = () => {
-  const projects: TProject[] = useSelector((state: { projects: { projects: TProject[] } }) => state.projects.projects);
+  const projects = useSelector((state: RootState) => state.projects.projects);
   const dispatch = useDispatch();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -130,7 +131,7 @@ const ProjectsPageAdmin = () => {
                   <td className="px-4 py-2">
                     <div className="flex flex-wrap gap-2">
                       <Link
-                        to={`/projects/edit/${project.id}`}
+                        to={`/admin/projects/edit/${project.id}`}
                         className="text-yellow-500 dark:text-yellow-300 hover:text-yellow-700 text-sm md:text-base"
                       >
                         تعديل

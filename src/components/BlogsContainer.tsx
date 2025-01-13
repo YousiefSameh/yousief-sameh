@@ -1,9 +1,9 @@
 import { useSelector } from "react-redux";
-import store from "../store/store";
+import { RootState } from "../store/store";
 import { Link } from "react-router";
 
 const BlogsContainer = () => {
-  const { blogs } = useSelector(() => store.getState().blogs);
+  const blogs = useSelector((state: RootState) => state.blogs.blogs);
 
   return (
     <div className="blogs-container grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">

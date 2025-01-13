@@ -11,7 +11,7 @@ import Error from "../pages/Error";
 import BlogContent from "../pages/BlogContent";
 import HomePageAdmin from "../pages/admin/HomePage.admin";
 import ProjectsPageAdmin from "../pages/admin/ProjectsPage.admin";
-import AddProjectAdmin from "../pages/admin/AddProject.admin";
+import AddProjectAdmin from "../pages/admin/AddOrEditProject";
 
 const router = createBrowserRouter([
   {
@@ -60,6 +60,10 @@ const router = createBrowserRouter([
       },
       {
         path: "admin/projects/add",
+        element: <AddProjectAdmin />
+      },
+      {
+        path: "admin/projects/edit/:projectId",
         element: <AddProjectAdmin />
       },
     ],

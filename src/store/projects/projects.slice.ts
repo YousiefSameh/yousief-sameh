@@ -150,7 +150,7 @@ const projectsSlice = createSlice({
 			);
 			if (projectIndex !== -1) {
 				state.projects[projectIndex] = updatedProject;
-
+		
 				const filteredIndex = state.filteredProjects.findIndex(
 					(project) => project.id === updatedProject.id
 				);

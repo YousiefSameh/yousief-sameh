@@ -1,12 +1,12 @@
 import { FaEye, FaGithub } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
-import store from "../store/store";
+import { RootState } from "../store/store";
 import { setActiveCategory } from "../store/projects/projects.slice";
 import { useEffect } from "react";
 
 const ProjectContainer = () => {
 	const dispatch = useDispatch();
-	const { filteredProjects, activeCategory } = useSelector(() => store.getState().projects)
+	const { filteredProjects, activeCategory } = useSelector((state: RootState) => state.projects);
 	useEffect(() => {
 		dispatch(setActiveCategory("all"));
 	}, [dispatch]);
