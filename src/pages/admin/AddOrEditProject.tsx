@@ -96,7 +96,7 @@ const AddOrEditProject = () => {
 				<form onSubmit={handleSubmit} className="form my-8 space-y-7">
 					<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 						<div className="space-y-3">
-							<label htmlFor="projectTitle" className="text-lg font-medium">
+							<label htmlFor="projectTitle" className="text-lg font-medium text-black dark:text-white">
 								عنوان المشروع
 							</label>
 							<input
@@ -104,12 +104,13 @@ const AddOrEditProject = () => {
 								id="projectTitle"
 								name="projectTitle"
 								value={formData.projectTitle}
+								placeholder="اكتب عنوان المشروع هنا ..."
 								onChange={handleChange}
 								className="input"
 							/>
 						</div>
 						<div className="space-y-3">
-							<label htmlFor="projectSubtitle" className="text-lg font-medium">
+							<label htmlFor="projectSubtitle" className="text-lg font-medium text-black dark:text-white">
 								وصف المشروع
 							</label>
 							<input
@@ -117,6 +118,7 @@ const AddOrEditProject = () => {
 								id="projectSubtitle"
 								name="projectSubtitle"
 								value={formData.projectSubtitle}
+								placeholder="اكتب وصف المشروع هنا ..."
 								onChange={handleChange}
 								className="input"
 							/>
@@ -124,7 +126,7 @@ const AddOrEditProject = () => {
 					</div>
 					<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 						<div className="space-y-3">
-							<label htmlFor="projectURL" className="text-lg font-medium">
+							<label htmlFor="projectURL" className="text-lg font-medium text-black dark:text-white">
 								لينك المشروع
 							</label>
 							<input
@@ -132,12 +134,13 @@ const AddOrEditProject = () => {
 								id="projectURL"
 								name="projectURL"
 								value={formData.projectURL}
+								placeholder="اكتب لينك المشروع هنا ..."
 								onChange={handleChange}
 								className="input"
 							/>
 						</div>
 						<div className="space-y-3">
-							<label htmlFor="projectGithubURL" className="text-lg font-medium">
+							<label htmlFor="projectGithubURL" className="text-lg font-medium text-black dark:text-white">
 								لينك Github
 							</label>
 							<input
@@ -145,6 +148,7 @@ const AddOrEditProject = () => {
 								id="projectGithubURL"
 								name="projectGithubURL"
 								value={formData.projectGithubURL}
+								placeholder="اكتب لينك Github هنا ..."
 								onChange={handleChange}
 								className="input"
 							/>
@@ -152,7 +156,7 @@ const AddOrEditProject = () => {
 					</div>
 					<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 						<div className="space-y-3">
-							<label htmlFor="projectImage" className="text-lg font-medium">
+							<label htmlFor="projectImage" className="text-lg font-medium text-black dark:text-white">
 								صورة المشروع
 							</label>
 							<input
@@ -164,7 +168,7 @@ const AddOrEditProject = () => {
 							/>
 						</div>
 						<div className="space-y-3">
-							<label htmlFor="category" className="text-lg font-medium">
+							<label htmlFor="category" className="text-lg font-medium text-black dark:text-white">
 								نوع المشروع
 							</label>
 							<input
@@ -173,6 +177,7 @@ const AddOrEditProject = () => {
 								name="category"
 								value={formData.category}
 								onChange={handleChange}
+								placeholder="اكتب نوع المشروع هنا ..."
 								className="input"
 							/>
 						</div>
