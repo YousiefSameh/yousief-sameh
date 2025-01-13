@@ -71,7 +71,7 @@ const ProjectContainer = () => {
 									const target = e.target as HTMLImageElement;
 									target.onerror = null;
 									target.src =
-										"https://dummyimage.com/315x123/cccccc/000000&text=No+Image";
+										"";
 								}}
 								className="object-cover rounded-lg"
 							/>

@@ -18,7 +18,7 @@ const Header = ({ theme, toggleTheme }: HeaderProps) => {
 		<header className="bg-light-container-color dark:bg-dark-container-color border-[2px] border-light-border-color dark:border-dark-border-color py-8 px-5 rounded-lg w-full">
 			<div className="profile flex items-center gap-2 justify-center">
 				<img
-					src="/assets/profile.png"
+					src="/assets/profile.webp"
 					className="w-[75px] h-[75px] border-[3px] border-primary-color rounded-full ml-[20px]"
 					alt="صورة يوسف سامح"
 				/>

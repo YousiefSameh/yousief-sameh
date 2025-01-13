@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import { RootState } from "../../store/store";
 import { SpecialHeader } from "../../components";
 
@@ -47,12 +47,12 @@ const HomePageAdmin = () => {
       <div className="content">
         <SpecialHeader title="صفحة الرئيسيه للادمن" id="admin-title"/>
         <div className="cards grid md:grid-cols-2 grid-cols-1 gap-12 mt-8">
-          <div className="card bg-primary-color flex items-center justify-center gap-2 w-full p-5 rounded-xl">
+          <Link to={"/admin/projects"} className="card bg-primary-color flex items-center justify-center gap-2 w-full p-5 rounded-xl">
             <h1 className="text-4xl text-white font-bold">عدد المشاريع: {projects.length}</h1>
-          </div>
-          <div className="card bg-primary-color flex items-center justify-center gap-2 w-full p-5 rounded-xl">
+          </Link>
+          <Link to={"/admin/blogs"} className="card bg-primary-color flex items-center justify-center gap-2 w-full p-5 rounded-xl">
             <h1 className="text-4xl text-white font-bold">عدد الندوات: {blogs.length}</h1>
-          </div>
+          </Link>
         </div>
       </div>
       <footer>
