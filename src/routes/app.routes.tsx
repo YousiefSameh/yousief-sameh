@@ -11,6 +11,7 @@ import Error from "../pages/Error";
 import BlogContent from "../pages/BlogContent";
 import HomePageAdmin from "../pages/admin/HomePage.admin";
 import ProjectsPageAdmin from "../pages/admin/ProjectsPage.admin";
+import AddProjectAdmin from "../pages/admin/AddProject.admin";
 
 const router = createBrowserRouter([
   {
@@ -56,6 +57,10 @@ const router = createBrowserRouter([
       {
         path: "admin/projects",
         element: <ProjectsPageAdmin />
+      },
+      {
+        path: "admin/projects/add",
+        element: <AddProjectAdmin />
       },
     ],
   },

@@ -33,7 +33,6 @@ const ProjectsPageAdmin = () => {
       role="main"
       aria-labelledby="admin-title"
     >
-      {/* شريط التنقل */}
       <nav
         className="bg-light-border-color dark:bg-dark-border-color px-3 md:px-6 py-3 rounded-s-md rounded-tl-md rounded-tr-md md:rounded-tr-none w-full md:w-fit absolute top-0 left-0"
         aria-label="الرئيسية"
