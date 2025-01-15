@@ -1,6 +1,8 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 // layouts
 import MainLayout from "../layout/main.layout";
+// components
+import AdminRoute from "../components/AdminRoute";
 
 // pages
 import Home from "../pages/Home";
@@ -14,6 +16,7 @@ import ProjectsPageAdmin from "../pages/admin/ProjectsPage.admin";
 import AddProjectAdmin from "../pages/admin/AddOrEditProject";
 import BlogsPageAdmin from "../pages/admin/BlogsPage.admin";
 import AddOrEditBlog from "../pages/admin/AddOrEditBlog";
+import LoginPageAdmin from "../pages/admin/LoginPage.admin";
 
 const router = createBrowserRouter([
   {
@@ -36,49 +39,70 @@ const router = createBrowserRouter([
       {
         path: "blogs/blog/:id",
         element: <BlogContent />,
-        loader: ({ params }) => {
-          if (
-            typeof params.id !== "string"
-          ) {
-            throw new Response("Bad Request", {
-              statusText: "Category not found",
-              status: 404,
-            });
-          }
-          return true;
-        },
       },
       {
         path: "contact",
         element: <Contact />,
       },
       {
+        path: "admin/login",
+        element: <LoginPageAdmin />,
+      },
+      {
         path: "admin/home",
-        element: <HomePageAdmin />
+        element: (
+          <AdminRoute>
+            <HomePageAdmin />
+          </AdminRoute>
+        ),
       },
       {
         path: "admin/projects",
-        element: <ProjectsPageAdmin />
+        element: (
+          <AdminRoute>
+            <ProjectsPageAdmin />
+          </AdminRoute>
+        ),
       },
       {
         path: "admin/projects/add",
-        element: <AddProjectAdmin />
+        element: (
+          <AdminRoute>
+            <AddProjectAdmin />
+          </AdminRoute>
+        ),
       },
       {
         path: "admin/projects/edit/:projectId",
-        element: <AddProjectAdmin />
+        element: (
+          <AdminRoute>
+            <AddProjectAdmin />
+          </AdminRoute>
+        ),
       },
       {
         path: "admin/blogs",
-        element: <BlogsPageAdmin />
+        element: (
+          <AdminRoute>
+            <BlogsPageAdmin />
+          </AdminRoute>
+        ),
       },
       {
         path: "admin/blogs/add",
-        element: <AddOrEditBlog />
+        element: (
+          <AdminRoute>
+            <AddOrEditBlog />
+          </AdminRoute>
+        ),
       },
       {
         path: "admin/blogs/edit/:blogId",
-        element: <AddOrEditBlog />
+        element: (
+          <AdminRoute>
+            <AddOrEditBlog />
+          </AdminRoute>
+        ),
       },
     ],
   },
