@@ -18,7 +18,7 @@ const Contact = () => {
 			.sendForm(
 				"service_kpveym8",
 				"template_m5ymbx4",
-				e.target,
+				e.target as HTMLFormElement,
 				"QDiyb79l5vMxBUarG"
 			)
 			.then(
