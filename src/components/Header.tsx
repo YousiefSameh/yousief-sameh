@@ -21,16 +21,17 @@ const Header = ({ theme, toggleTheme }: HeaderProps) => {
 					src="/assets/profile.webp"
 					className="w-[75px] h-[75px] border-[3px] border-primary-color rounded-full ml-[20px]"
 					alt="صورة يوسف سامح"
+					loading="lazy"
 				/>
 				<div className="text">
 					<h1
-						className="text-[28px] font-bold text-black dark:text-white"
+						className="md:text-[28px] text-xl font-bold text-black dark:text-white"
 						aria-label="الاسم"
 					>
 						يوسف سامح
 					</h1>
 					<h2
-						className="text-[18px] font-medium text-gray-700 dark:text-gray-300"
+						className="md:text-[18px] text-[16px] font-medium text-gray-700 dark:text-gray-300"
 						aria-label="الوظيفة"
 					>
 						مطور واجهات أمامية
@@ -47,10 +48,10 @@ const Header = ({ theme, toggleTheme }: HeaderProps) => {
 						<HiMail className="w-[40px] h-[40px] text-primary-color" />
 					</div>
 					<div className="text">
-						<h3 className="text-[16px] font-medium text-gray-700 dark:text-gray-300">
+						<h3 className="sm:text-[16px] text-[14px] font-medium text-gray-700 dark:text-gray-300">
 							البريد الإلكتروني
 						</h3>
-						<p className="text-[18px] font-medium text-black dark:text-white">
+						<p className="sm:text-[18px] text-[16px] font-medium text-black dark:text-white">
 							<a
 								href="mailto:yousief.sameh@outlook.com"
 								aria-label="البريد الإلكتروني: yousief.sameh@outlook.com"
@@ -68,10 +69,10 @@ const Header = ({ theme, toggleTheme }: HeaderProps) => {
 						<LuPhoneCall className="w-[40px] h-[40px] text-primary-color" />
 					</div>
 					<div className="text">
-						<h3 className="text-[16px] font-medium text-gray-700 dark:text-gray-300">
+						<h3 className="sm:text-[16px] text-[14px] font-medium text-gray-700 dark:text-gray-300">
 							رقم التليفون (واتساب ومكالمات)
 						</h3>
-						<p className="text-[18px] font-medium text-black dark:text-white">
+						<p className="sm:text-[18px] text-[16px] font-medium text-black dark:text-white">
 							<a
 								href="tel:+201288565394"
 								aria-label="اتصل برقم الهاتف: +20 128-856-5394"
