@@ -95,20 +95,6 @@ const BlogContent = () => {
 					<p className="text-[18px] text-black dark:text-white my-4 leading-loose">
 						{blog.content}
 					</p>
-					<motion.img
-						src={blog.imageUrl}
-						alt={blog.title}
-						onError={(e) => {
-							const target = e.target as HTMLImageElement;
-							target.onerror = null;
-							target.src =
-								"https://dummyimage.com/315x123/cccccc/000000&text=No+Image ";
-						}}
-						className="object-cover w-full rounded-lg"
-						initial={{ opacity: 0 }}
-						animate={{ opacity: 1 }}
-						transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
-					/>
 				</motion.div>
 			</div>
 		</main>

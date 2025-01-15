@@ -14,19 +14,6 @@ const BlogsContainer = () => {
 					className="blog-card bg-light-border-color dark:bg-dark-card-color rounded-lg shadow-card-shadow relative group"
 					aria-label={blog.title}
 				>
-					<div className="image relative">
-						<img
-							src={blog.imageUrl}
-							alt={blog.title}
-							onError={(e) => {
-								const target = e.target as HTMLImageElement;
-								target.onerror = null;
-								target.src = "https://dummyimage.com/315x123/cccccc/000000&text=No+Image ";
-							}}
-							className="object-cover w-full rounded-lg"
-						/>
-					</div>
-
 					<div className="text flex flex-col gap-1 p-4 md:px-6 md:py-4">
 						<span className="text-primary-color uppercase font-bold text-lg block">
 							{blog.publishedDate}
