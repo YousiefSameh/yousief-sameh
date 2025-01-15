@@ -9,7 +9,7 @@ const Contact = () => {
 	const [status, setStatus] = useState("");
 	const [errorMessage, setErrorMessage] = useState("");
 
-	const handleSubmit = (e) => {
+	const handleSubmit = (e: { preventDefault: () => void; target: string | HTMLFormElement; }) => {
 		e.preventDefault();
 		setStatus("pending");
 		emailjs
@@ -20,7 +20,7 @@ const Contact = () => {
 				"QDiyb79l5vMxBUarG"
 			)
 			.then(
-				(result) => {
+				() => {
 					setStatus("success");
 				},
 				(error) => {
