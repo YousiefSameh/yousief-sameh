@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { SpecialHeader } from "../components";
@@ -9,7 +10,8 @@ const Contact = () => {
 	const [status, setStatus] = useState("");
 	const [errorMessage, setErrorMessage] = useState("");
 
-	const handleSubmit = (e: { preventDefault: () => void; target: string | HTMLFormElement; }) => {
+	
+	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		setStatus("pending");
 		emailjs
