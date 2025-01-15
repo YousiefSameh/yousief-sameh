@@ -4,9 +4,32 @@
 		<!-- Charset for proper text encoding -->
 		<meta charset="UTF-8" />
 
-		<!-- Favicon for better branding -->
-		<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-
+		<!-- Favicon -->
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="/assets/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="/assets/favicon-16x16.png"
+		/>
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="/assets/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/svg+xml"
+			href="/assets/favicon.ico"
+		/>
+		<meta name="msapplication-TileColor" content="#ffffff" />
+		<meta name="theme-color" content="#ffffff" />
+		<link rel="manifest" href="/site.webmanifest">
 		<!-- Meta tags for responsive design -->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -30,16 +53,31 @@
 			content="اكتشف محفظة يوسف سامح التي تعرض مشاريع تم إنشاؤها باستخدام React و Redux و TypeScript و Tailwind CSS."
 		/>
 		<meta property="og:image" content="/path-to-image.jpg" />
-		<meta property="og:url" content="https://youssef-sameh-portfolio.vercel.app" />
+		<meta
+			property="og:url"
+			content="https://youssef-sameh-portfolio.vercel.app"
+		/>
 
 		<!-- Canonical link for the page to avoid duplicate content issues -->
-		<link rel="canonical" href="https://youssef-sameh-portfolio.vercel.app" />
+		<link href="https://youssef-sameh-portfolio.vercel.app" rel="canonical"/>
 
 		<!-- Additional metadata for improved search engine visibility -->
 		<meta name="robots" content="index, follow" />
 
 		<!-- Language of the document (important for accessibility and SEO) -->
 		<meta http-equiv="Content-Language" content="ar" />
+
+		<link
+			rel="preload"
+			href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"
+			as="style"
+			onload="this.onload=null;this.rel='stylesheet'"
+		/>
+		<noscript
+			><link
+				rel="stylesheet"
+				href="https://fonts.googleapis.com/css2?family=..."
+		/></noscript>
 	</head>
 
 	<body>
