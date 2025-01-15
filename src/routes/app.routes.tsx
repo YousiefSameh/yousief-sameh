@@ -12,6 +12,8 @@ import BlogContent from "../pages/BlogContent";
 import HomePageAdmin from "../pages/admin/HomePage.admin";
 import ProjectsPageAdmin from "../pages/admin/ProjectsPage.admin";
 import AddProjectAdmin from "../pages/admin/AddOrEditProject";
+import BlogsPageAdmin from "../pages/admin/BlogsPage.admin";
+import AddOrEditBlog from "../pages/admin/AddOrEditBlog";
 
 const router = createBrowserRouter([
   {
@@ -65,6 +67,18 @@ const router = createBrowserRouter([
       {
         path: "admin/projects/edit/:projectId",
         element: <AddProjectAdmin />
+      },
+      {
+        path: "admin/blogs",
+        element: <BlogsPageAdmin />
+      },
+      {
+        path: "admin/blogs/add",
+        element: <AddOrEditBlog />
+      },
+      {
+        path: "admin/blogs/edit/:blogId",
+        element: <AddOrEditBlog />
       },
     ],
   },

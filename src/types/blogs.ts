@@ -6,7 +6,6 @@ export type TBlog = {
   description: string;
   content: string;
   publishedDate: string;
-  imageUrl: string;
 }
 
 export interface initialStateType {
