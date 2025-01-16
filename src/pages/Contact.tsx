@@ -10,7 +10,6 @@ const Contact = () => {
 	const [status, setStatus] = useState("");
 	const [errorMessage, setErrorMessage] = useState("");
 
-	
 	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		setStatus("pending");
@@ -89,10 +88,10 @@ const Contact = () => {
 							<HiMail className="w-[40px] h-[40px] text-primary-color" />
 						</div>
 						<div className="text">
-							<h3 className="text-[16px] font-medium text-gray-700 dark:text-gray-300">
+							<h3 className="sm:text-[16px] text-[14px] font-medium text-gray-700 dark:text-gray-300">
 								البريد الإلكتروني
 							</h3>
-							<p className="text-[18px] font-medium text-black dark:text-white">
+							<p className="sm:text-[18px] text-[16px] font-medium text-black dark:text-white">
 								<a
 									href="mailto:yousief.sameh@outlook.com"
 									aria-label="البريد الإلكتروني: yousief.sameh@outlook.com"
@@ -110,10 +109,10 @@ const Contact = () => {
 							<LuPhoneCall className="w-[40px] h-[40px] text-primary-color" />
 						</div>
 						<div className="text">
-							<h3 className="text-[16px] font-medium text-gray-700 dark:text-gray-300">
+							<h3 className="sm:text-[16px] text-[14px] font-medium text-gray-700 dark:text-gray-300">
 								رقم التليفون (واتساب ومكالمات)
 							</h3>
-							<p className="text-[18px] font-medium text-black dark:text-white">
+							<p className="sm:text-[18px] text-[16px] font-medium text-black dark:text-white">
 								<a
 									href="tel:+201288565394"
 									aria-label="اتصل برقم الهاتف: +20 128-856-5394"
