@@ -25,11 +25,11 @@ const Header = ({ theme, toggleTheme }: HeaderProps) => {
           width="75"
           height="75"
         />
-        <div className="text">
+        <div className="text space-y-2">
           <h1 className="md:text-[28px] text-xl font-bold text-black dark:text-white" aria-label="الاسم يوسف سامح">
             يوسف سامح
           </h1>
-          <h2 className="md:text-[18px] text-[16px] font-medium text-gray-700 dark:text-gray-300" aria-label="الوظيفة مطور واجهات أمامية">
+          <h2 className="md:text-[16px] text-[14px] font-medium text-gray-700 dark:text-gray-300" aria-label="الوظيفة مطور واجهات أمامية">
             مطور واجهات أمامية
           </h2>
         </div>
@@ -43,9 +43,9 @@ const Header = ({ theme, toggleTheme }: HeaderProps) => {
           >
             <HiMail className="sm:w-[40px] sm:h-[40px] w-[35px] h-[35px] text-primary-color" />
           </div>
-          <div className="text">
+          <div className="text space-y-1">
             <h3 className="sm:text-[16px] text-[14px] font-medium text-gray-700 dark:text-gray-300">البريد الإلكتروني</h3>
-            <p className="sm:text-[18px] text-[16px] font-medium text-black dark:text-white">
+            <p className="sm:text-[16px] text-[14px] font-medium text-black dark:text-white">
               <a href="mailto:yousief.sameh@outlook.com" aria-label="البريد الإلكتروني: yousief.sameh@outlook.com">
                 yousief.sameh@outlook.com
               </a>
@@ -59,11 +59,11 @@ const Header = ({ theme, toggleTheme }: HeaderProps) => {
           >
             <LuPhoneCall className="sm:w-[40px] sm:h-[40px] w-[35px] h-[35px] text-primary-color" />
           </div>
-          <div className="text">
+          <div className="text space-y-1">
             <h3 className="sm:text-[16px] text-[14px] font-medium text-gray-700 dark:text-gray-300">
               رقم التليفون (واتساب ومكالمات)
             </h3>
-            <p className="sm:text-[18px] text-[16px] font-medium text-black dark:text-white">
+            <p className="sm:text-[16px] text-[14px] font-medium text-black dark:text-white">
               <a href="tel:+201288565394" aria-label="اتصل برقم الهاتف: +20 128-856-5394">
                 128-856-5394 (20)+
               </a>
@@ -114,8 +114,8 @@ const Header = ({ theme, toggleTheme }: HeaderProps) => {
       </div>
       <footer>
 				<div className="footer-content mt-6 text-center">
-					<p className="text-sm text-black dark:text-white opacity-80 font-bold hover:opacity-100 transition-opacity cursor-pointer">
-						&copy; <span className="text-primary-color">يوسف سامح</span> 2025 كل
+					<p className="text-sm text-black dark:text-white opacity-90 font-semibold hover:opacity-100 transition-opacity cursor-pointer">
+						&copy; <span className="text-primary-color font-bold">يوسف سامح</span> 2025 كل
 						الحقوق محفوظة
 					</p>
 				</div>

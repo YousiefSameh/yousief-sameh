@@ -15,7 +15,7 @@ const ProjectContainer = () => {
 			<nav className="categories flex items-center justify-center gap-6 mt-6 flex-wrap">
 				<button
 					onClick={() => dispatch(setActiveCategory("react"))}
-					className={`category-btn w-full md:w-[120px] text-black dark:text-white font-bold text-[13px] md:text-base shadow-card-shadow shadow-primary-color/40 py-2 px-4 rounded-lg ${
+					className={`category-btn w-full md:w-[130px] text-black dark:text-white font-bold text-[13px] md:text-base shadow-card-shadow shadow-primary-color/40 py-2 px-4 rounded-lg ${
 						activeCategory === "react"
 							? "bg-primary-color text-black"
 							: "bg-light-border-color dark:bg-dark-border-color"
@@ -25,7 +25,7 @@ const ProjectContainer = () => {
 				</button>
 				<button
 					onClick={() => dispatch(setActiveCategory("javascript"))}
-					className={`category-btn w-full md:w-[120px] text-black dark:text-white font-bold text-[13px] md:text-base shadow-card-shadow shadow-primary-color/40 py-2 px-4 rounded-lg ${
+					className={`category-btn w-full md:w-[130px] text-black dark:text-white font-bold text-[13px] md:text-base shadow-card-shadow shadow-primary-color/40 py-2 px-4 rounded-lg ${
 						activeCategory === "javascript"
 							? "bg-primary-color text-black"
 							: "bg-light-border-color dark:bg-dark-border-color"
@@ -35,7 +35,7 @@ const ProjectContainer = () => {
 				</button>
 				<button
 					onClick={() => dispatch(setActiveCategory("html & css"))}
-					className={`category-btn w-full md:w-[120px] text-black dark:text-white font-bold text-[13px] md:text-base shadow-card-shadow shadow-primary-color/40 py-2 px-4 rounded-lg ${
+					className={`category-btn w-full md:w-[130px] text-black dark:text-white font-bold text-[13px] md:text-base shadow-card-shadow shadow-primary-color/40 py-2 px-4 rounded-lg ${
 						activeCategory === "html & css"
 							? "bg-primary-color text-black"
 							: "bg-light-border-color dark:bg-dark-border-color"
@@ -45,7 +45,7 @@ const ProjectContainer = () => {
 				</button>
 				<button
 					onClick={() => dispatch(setActiveCategory("all"))}
-					className={`category-btn w-full md:w-[120px] text-black dark:text-white font-bold text-[13px] md:text-base shadow-card-shadow shadow-primary-color/40 py-2 px-4 rounded-lg ${
+					className={`category-btn w-full md:w-[130px] text-black dark:text-white font-bold text-[13px] md:text-base shadow-card-shadow shadow-primary-color/40 py-2 px-4 rounded-lg ${
 						activeCategory === "all"
 							? "bg-primary-color text-black"
 							: "bg-light-border-color dark:bg-dark-border-color"
@@ -104,7 +104,7 @@ const ProjectContainer = () => {
 								</div>
 							</div>
 						</div>
-						<div className="text flex flex-col gap-1 p-3 md:px-6 md:py-4">
+						<div className="text flex flex-col gap-2 p-3 md:px-6 md:py-4">
 							<span className="text-primary-color uppercase font-bold sm:text-lg text-base block">
 								{project.category}
 							</span>

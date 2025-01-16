@@ -17,7 +17,7 @@ const Services = () => {
 				role="list"
 			>
 				<div
-					className="card p-4 border-[2px] border-light-border-color dark:border-dark-border-color bg-light-card-color dark:bg-dark-card-color shadow-card-shadow rounded-lg"
+					className="card p-4 cursor-pointer border-[2px] border-light-border-color dark:border-dark-border-color bg-light-card-color dark:bg-dark-card-color shadow-card-shadow rounded-lg"
 					role="listitem"
 				>
 					<div className="head flex items-center gap-2">
@@ -35,7 +35,7 @@ const Services = () => {
 					</p>
 				</div>
 				<div
-					className="card p-4 border-[2px] border-light-border-color dark:border-dark-border-color bg-light-card-color dark:bg-dark-card-color shadow-card-shadow rounded-lg"
+					className="card p-4 cursor-pointer border-[2px] border-light-border-color dark:border-dark-border-color bg-light-card-color dark:bg-dark-card-color shadow-card-shadow rounded-lg"
 					role="listitem"
 				>
 					<div className="head flex items-center gap-2">
@@ -53,7 +53,7 @@ const Services = () => {
 					</p>
 				</div>
 				<div
-					className="card p-4 border-[2px] border-light-border-color dark:border-dark-border-color bg-light-card-color dark:bg-dark-card-color shadow-card-shadow rounded-lg"
+					className="card p-4 cursor-pointer border-[2px] border-light-border-color dark:border-dark-border-color bg-light-card-color dark:bg-dark-card-color shadow-card-shadow rounded-lg"
 					role="listitem"
 				>
 					<div className="head flex items-center gap-2">
@@ -71,7 +71,7 @@ const Services = () => {
 					</p>
 				</div>
 				<div
-					className="card p-4 border-[2px] border-light-border-color dark:border-dark-border-color bg-light-card-color dark:bg-dark-card-color shadow-card-shadow rounded-lg"
+					className="card p-4 cursor-pointer border-[2px] border-light-border-color dark:border-dark-border-color bg-light-card-color dark:bg-dark-card-color shadow-card-shadow rounded-lg"
 					role="listitem"
 				>
 					<div className="head flex items-center gap-2">

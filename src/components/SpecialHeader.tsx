@@ -8,7 +8,7 @@ interface SpecialHeaderProps {
 const SpecialHeader = React.memo(({ title, id }: SpecialHeaderProps) => {
   return (
     <div className="special-header md:mt-0 mt-16" id={id}>
-      <h1 className="text-black dark:text-white font-bold md:text-4xl text-3xl">{title}</h1>
+      <h1 className="text-black dark:text-white font-bold md:text-[42px] pb-2 text-3xl">{title}</h1>
       <span className="line" />
     </div>
   );
