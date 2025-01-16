@@ -104,14 +104,14 @@ const ProjectContainer = () => {
 								</div>
 							</div>
 						</div>
-						<div className="text flex flex-col gap-1 p-4 md:px-6 md:py-4">
-							<span className="text-primary-color uppercase font-bold text-lg block">
+						<div className="text flex flex-col gap-1 p-3 md:px-6 md:py-4">
+							<span className="text-primary-color uppercase font-bold sm:text-lg text-base block">
 								{project.category}
 							</span>
-							<h3 className="text-[28px] font-bold text-black dark:text-white">
+							<h3 className="sm:text-[28px] text-2xl font-bold text-black dark:text-white">
 								{project.projectTitle}
 							</h3>
-							<p className="text-[16px] text-black dark:text-white opacity-80">
+							<p className="sm:text-base text-sm text-black dark:text-white opacity-80">
 								{project.projectSubtitle}
 							</p>
 						</div>

@@ -8,7 +8,7 @@ const Services = () => {
 		<section className="services mt-6" aria-labelledby="services-title">
 			<h2
 				id="services-title"
-				className="text-black dark:text-white text-3xl font-bold my-2"
+				className="text-black dark:text-white sm:text-3xl text-2xl font-bold my-2"
 			>
 				خدماتي
 			</h2>
@@ -22,14 +22,14 @@ const Services = () => {
 				>
 					<div className="head flex items-center gap-2">
 						<AiOutlineAntDesign
-							className="text-5xl text-primary-color w-[40px] h-[40px]"
+							className="sm:text-5xl text-3xl text-primary-color sm:w-[40px] w-[35px] sm:h-[40px] h-[35px]"
 							aria-hidden="true"
 						/>
-						<h3 className="text-xl font-bold text-black dark:text-white">
+						<h3 className="sm:text-xl text-lg font-bold text-black dark:text-white">
 							تصميم واجهات متجاوبة
 						</h3>
 					</div>
-					<p className="body text-[18px] text-black dark:text-white leading-loose">
+					<p className="body sm:text-lg text-base text-black dark:text-white leading-loose">
 						تطوير واجهات ويب حديثة تعمل بكفاءة على جميع الأجهزة، مع ضمان تجربة
 						مستخدم متكاملة.
 					</p>
@@ -40,14 +40,14 @@ const Services = () => {
 				>
 					<div className="head flex items-center gap-2">
 						<FaReact
-							className="text-5xl text-primary-color w-[40px] h-[40px]"
+							className="sm:text-5xl text-3xl text-primary-color sm:w-[40px] w-[35px] sm:h-[40px] h-[35px]"
 							aria-hidden="true"
 						/>
-						<h3 className="text-xl font-bold text-black dark:text-white">
+						<h3 className="sm:text-xl text-lg font-bold text-black dark:text-white">
 							تطوير تطبيقات React
 						</h3>
 					</div>
-					<p className="body text-[18px] text-black dark:text-white leading-loose">
+					<p className="body sm:text-lg text-base text-black dark:text-white leading-loose">
 						بناء تطبيقات ويب ديناميكية وقابلة للتطوير باستخدام React، مع التركيز
 						على الأداء والتصميم.
 					</p>
@@ -58,14 +58,14 @@ const Services = () => {
 				>
 					<div className="head flex items-center gap-2">
 						<IoSpeedometerOutline
-							className="text-5xl text-primary-color w-[40px] h-[40px]"
+							className="sm:text-5xl text-3xl text-primary-color sm:w-[40px] w-[35px] sm:h-[40px] h-[35px]"
 							aria-hidden="true"
 						/>
-						<h3 className="text-xl font-bold text-black dark:text-white">
+						<h3 className="sm:text-xl text-lg font-bold text-black dark:text-white">
 							تحسين الأداء والتجربة
 						</h3>
 					</div>
-					<p className="body text-[18px] text-black dark:text-white leading-loose">
+					<p className="body sm:text-lg text-base text-black dark:text-white leading-loose">
 						تحسين سرعة وأداء المواقع لتحسين تجربة المستخدم وتلبية احتياجات
 						العملاء.
 					</p>
@@ -76,14 +76,14 @@ const Services = () => {
 				>
 					<div className="head flex items-center gap-2">
 						<GiSettingsKnobs
-							className="text-5xl text-primary-color w-[40px] h-[40px]"
+							className="sm:text-5xl text-3xl text-primary-color sm:w-[40px] w-[35px] sm:h-[40px] h-[35px]"
 							aria-hidden="true"
 						/>
-						<h3 className="text-xl font-bold text-black dark:text-white">
+						<h3 className="sm:text-xl text-lg font-bold text-black dark:text-white">
 							إدارة مشاريع تقنية
 						</h3>
 					</div>
-					<p className="body text-[18px] text-black dark:text-white leading-loose">
+					<p className="body sm:text-lg text-base text-black dark:text-white leading-loose">
 						تخطيط وتنفيذ مشاريع برمجية باحترافية لضمان تسليم عالي الجودة وفي
 						الوقت المحدد.
 					</p>

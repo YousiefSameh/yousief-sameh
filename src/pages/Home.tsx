@@ -52,7 +52,7 @@ const Home = () => {
 			</div>
 			<footer>
 				<div className="footer-content mt-6 text-center">
-					<p className="md:text-lg text-base text-black dark:text-white opacity-80 font-bold hover:opacity-100 transition-opacity cursor-pointer">
+					<p className="md:text-lg text-sm text-black dark:text-white opacity-80 font-bold hover:opacity-100 transition-opacity cursor-pointer">
 						&copy; <span className="text-primary-color">يوسف سامح</span> 2025 كل
 						الحقوق محفوظة
 					</p>

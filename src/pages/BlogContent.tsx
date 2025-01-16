@@ -65,7 +65,7 @@ const BlogContent = () => {
 			</nav>
 			<div className="content mt-12">
 				<motion.h2
-					className="text-[32px] font-bold text-black dark:text-white mb-2"
+					className="md:text-4xl text-2xl font-bold text-black dark:text-white sm:mb-2 mb-4"
 					initial={{ opacity: 0, y: -20 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6, ease: "easeOut" }}
@@ -73,7 +73,7 @@ const BlogContent = () => {
 					{blog.title}
 				</motion.h2>
 				<motion.p
-					className="text-[16px] text-black dark:text-white opacity-80"
+					className="sm:text-base text-sm leading-relaxed text-black dark:text-white opacity-80"
 					initial={{ opacity: 0, y: -20 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
@@ -81,7 +81,7 @@ const BlogContent = () => {
 					{blog.description}
 				</motion.p>
 				<motion.span
-					className="line w-full my-8 block border-t border-light-border-color dark:border-dark-border-color"
+					className="line w-full sm:my-8 my-4 block border-t border-light-border-color dark:border-dark-border-color"
 					initial={{ scaleX: 0 }}
 					animate={{ scaleX: 1 }}
 					transition={{ duration: 0.8, ease: "easeOut" }}
@@ -92,7 +92,7 @@ const BlogContent = () => {
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
 				>
-					<p className="text-[18px] text-black dark:text-white my-4 leading-loose">
+					<p className="sm:text-lg text-base text-black dark:text-white my-4 leading-loose">
 						{blog.content}
 					</p>
 				</motion.div>

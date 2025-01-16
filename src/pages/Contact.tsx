@@ -82,10 +82,10 @@ const Contact = () => {
 				<div className="some-info flex sm:flex-row gap-6 sm:gap-0 flex-col items-center justify-around mt-8">
 					<div className="email flex items-center justify-center gap-3">
 						<div
-							className="icon bg-light-card-color dark:bg-dark-card-color p-3 rounded-lg shadow-lg w-fit ml-4"
+							className="icon bg-light-card-color dark:bg-dark-card-color sm:p-3 p-2 rounded-lg shadow-lg w-fit ml-4"
 							aria-hidden="true"
 						>
-							<HiMail className="w-[40px] h-[40px] text-primary-color" />
+							<HiMail className="sm:w-[40px] sm:h-[40px] w-[35px] h-[35px] text-primary-color" />
 						</div>
 						<div className="text">
 							<h3 className="sm:text-[16px] text-[14px] font-medium text-gray-700 dark:text-gray-300">
@@ -103,10 +103,10 @@ const Contact = () => {
 					</div>
 					<div className="phone flex items-center justify-center gap-3">
 						<div
-							className="icon bg-light-card-color dark:bg-dark-card-color p-3 rounded-lg shadow-lg w-fit ml-4"
+							className="icon bg-light-card-color dark:bg-dark-card-color sm:p-3 p-2 rounded-lg shadow-lg w-fit ml-4"
 							aria-hidden="true"
 						>
-							<LuPhoneCall className="w-[40px] h-[40px] text-primary-color" />
+							<LuPhoneCall className="sm:w-[40px] sm:h-[40px] w-[35px] h-[35px] text-primary-color" />
 						</div>
 						<div className="text">
 							<h3 className="sm:text-[16px] text-[14px] font-medium text-gray-700 dark:text-gray-300">
@@ -124,13 +124,13 @@ const Contact = () => {
 					</div>
 				</div>
 				<form onSubmit={handleSubmit} className="form my-8 space-y-6">
-					<h1 className="text-4xl font-bold mt-4 text-black dark:text-white">
+					<h1 className="sm:text-4xl text-2xl font-bold mt-4 text-black dark:text-white">
 						أرسل لي رسالة !
 					</h1>
 					<div className="name space-y-3">
 						<label
 							htmlFor="fullname"
-							className="text-lg font-medium text-black dark:text-white"
+							className="sm:text-lg text-base font-medium text-black dark:text-white"
 						>
 							الاسم بالكامل
 						</label>
@@ -145,7 +145,7 @@ const Contact = () => {
 					<div className="email space-y-3">
 						<label
 							htmlFor="email"
-							className="text-lg font-medium text-black dark:text-white"
+							className="sm:text-lg text-base font-medium text-black dark:text-white"
 						>
 							البريد الإلكتروني
 						</label>
@@ -160,7 +160,7 @@ const Contact = () => {
 					<div className="message space-y-3">
 						<label
 							htmlFor="message"
-							className="text-lg font-medium text-black dark:text-white"
+							className="sm:text-lg text-base font-medium text-black dark:text-white"
 						>
 							الرسالة
 						</label>

@@ -20,7 +20,7 @@ const Header = ({ theme, toggleTheme }: HeaderProps) => {
       <div className="profile flex items-center gap-2 justify-center">
         <img
           src="/assets/profile.webp"
-          className="w-[75px] h-[75px] border-[3px] border-primary-color rounded-full ml-[20px]"
+          className="sm:w-[75px] sm:h-[75px] w-[65px] h-[65px] border-[3px] border-primary-color rounded-full ml-[20px]"
           alt="صورة يوسف سامح، مطور واجهات أمامية"
           width="75"
           height="75"
@@ -34,14 +34,14 @@ const Header = ({ theme, toggleTheme }: HeaderProps) => {
           </h2>
         </div>
       </div>
-      <span className="w-full h-[2px] bg-light-border-color dark:bg-dark-border-color block my-7" />
+      <span className="w-full h-[2px] bg-light-border-color dark:bg-dark-border-color block sm:my-7 my-4" />
       <div className="details flex flex-col gap-6">
         <div className="email flex items-center justify-center gap-3">
           <div
-            className="icon bg-light-card-color dark:bg-dark-card-color p-3 rounded-lg shadow-lg w-fit ml-4"
+            className="icon bg-light-card-color dark:bg-dark-card-color sm:p-3 p-2 rounded-lg shadow-lg w-fit ml-4"
             aria-hidden="true"
           >
-            <HiMail className="w-[40px] h-[40px] text-primary-color" />
+            <HiMail className="sm:w-[40px] sm:h-[40px] w-[35px] h-[35px] text-primary-color" />
           </div>
           <div className="text">
             <h3 className="sm:text-[16px] text-[14px] font-medium text-gray-700 dark:text-gray-300">البريد الإلكتروني</h3>
@@ -54,10 +54,10 @@ const Header = ({ theme, toggleTheme }: HeaderProps) => {
         </div>
         <div className="phone flex items-center justify-center gap-3">
           <div
-            className="icon bg-light-card-color dark:bg-dark-card-color p-3 rounded-lg shadow-lg w-fit ml-4"
+            className="icon bg-light-card-color dark:bg-dark-card-color sm:p-3 p-2 rounded-lg shadow-lg w-fit ml-4"
             aria-hidden="true"
           >
-            <LuPhoneCall className="w-[40px] h-[40px] text-primary-color" />
+            <LuPhoneCall className="sm:w-[40px] sm:h-[40px] w-[35px] h-[35px] text-primary-color" />
           </div>
           <div className="text">
             <h3 className="sm:text-[16px] text-[14px] font-medium text-gray-700 dark:text-gray-300">
@@ -71,28 +71,28 @@ const Header = ({ theme, toggleTheme }: HeaderProps) => {
           </div>
         </div>
       </div>
-      <span className="w-full h-[2px] bg-light-border-color dark:bg-dark-border-color block my-7" />
+      <span className="w-full h-[2px] bg-light-border-color dark:bg-dark-border-color block sm:my-7 my-4	" />
       <div className="social-media flex items-center justify-center gap-4">
         <Suspense fallback={<div>Loading...</div>}>
           <div
             className="card whatsapp bg-light-card-color dark:bg-dark-card-color p-3 rounded-lg shadow-card-shadow w-fit ml-4"
           >
             <a href="https://wa.me/201288565394" target="_blank" rel="noopener noreferrer" aria-label="افتح رابط الواتساب">
-              <LazyFaWhatsapp className="text-black dark:text-white w-[30px] h-[30px] hover:text-primary-color dark:hover:text-primary-color transition-all" />
+              <LazyFaWhatsapp className="text-black dark:text-white sm:w-[30px] sm:h-[30px] w-[25px] h-[25px] hover:text-primary-color dark:hover:text-primary-color transition-all" />
             </a>
           </div>
           <div
             className="card github bg-light-card-color dark:bg-dark-card-color p-3 rounded-lg shadow-card-shadow w-fit ml-4"
           >
             <a href="https://github.com/YousiefSameh" target="_blank" rel="noopener noreferrer" aria-label="افتح رابط GitHub">
-              <LazyFaGithub className="text-black dark:text-white w-[30px] h-[30px] hover:text-primary-color dark:hover:text-primary-color transition-all" />
+              <LazyFaGithub className="text-black dark:text-white sm:w-[30px] sm:h-[30px] w-[25px] h-[25px] hover:text-primary-color dark:hover:text-primary-color transition-all" />
             </a>
           </div>
           <div
             className="card facebook bg-light-card-color dark:bg-dark-card-color p-3 rounded-lg shadow-card-shadow w-fit ml-4"
           >
             <a href="https://www.facebook.com/profile.php?id=100094333458845" target="_blank" rel="noopener noreferrer" aria-label="افتح رابط Facebook">
-              <LazyFaFacebook className="text-black dark:text-white w-[30px] h-[30px] hover:text-primary-color dark:hover:text-primary-color transition-all" />
+              <LazyFaFacebook className="text-black dark:text-white sm:w-[30px] sm:h-[30px] w-[25px] h-[25px] hover:text-primary-color dark:hover:text-primary-color transition-all" />
             </a>
           </div>
         </Suspense>
@@ -103,11 +103,11 @@ const Header = ({ theme, toggleTheme }: HeaderProps) => {
         >
           {theme === "light" ? (
             <Suspense fallback={<div>...</div>}>
-              <LazyFaMoon className="text-black dark:text-gray-200 w-[30px] h-[30px]" />
+              <LazyFaMoon className="text-black dark:text-gray-200 sm:w-[30px] sm:h-[30px] w-[25px] h-[25px]" />
             </Suspense>
           ) : (
             <Suspense fallback={<div>...</div>}>
-              <LazyFaSun className="text-yellow-500 w-[30px] h-[30px]" />
+              <LazyFaSun className="text-yellow-500 sm:w-[30px] sm:h-[30px] w-[25px] h-[25px]" />
             </Suspense>
           )}
         </button>
