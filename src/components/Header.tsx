@@ -22,7 +22,10 @@ const Header = ({ theme, toggleTheme }: HeaderProps) => {
 					className="w-[75px] h-[75px] border-[3px] border-primary-color rounded-full ml-[20px]"
 					alt="صورة يوسف سامح"
 					loading="lazy"
+					width="75"
+					height="75"
 				/>
+
 				<div className="text">
 					<h1
 						className="md:text-[28px] text-xl font-bold text-black dark:text-white"
