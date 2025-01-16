@@ -22,7 +22,6 @@ const Header = ({ theme, toggleTheme }: HeaderProps) => {
           src="/assets/profile.webp"
           className="w-[75px] h-[75px] border-[3px] border-primary-color rounded-full ml-[20px]"
           alt="صورة يوسف سامح، مطور واجهات أمامية"
-          loading="lazy"
           width="75"
           height="75"
         />
