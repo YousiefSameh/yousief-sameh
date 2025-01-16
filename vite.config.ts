@@ -9,14 +9,4 @@ export default defineConfig({
       open: true,
     }),
   ],
-  build: {
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          react: ['react', 'react-dom'],
-          lodash: ['lodash-es'],
-        },
-      },
-    },
-  },
 });
