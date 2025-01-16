@@ -25,7 +25,7 @@ const Header = ({ theme, toggleTheme }: HeaderProps) => {
           width="75"
           height="75"
         />
-        <div className="text">
+        <div className="text space-y-2">
           <h1 className="md:text-[28px] text-xl font-bold text-black dark:text-white" aria-label="الاسم يوسف سامح">
             يوسف سامح
           </h1>
