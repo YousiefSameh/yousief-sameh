@@ -8,7 +8,7 @@ const Services = () => {
 		<section className="services mt-6" aria-labelledby="services-title">
 			<h2
 				id="services-title"
-				className="text-black dark:text-white sm:text-3xl text-2xl font-bold my-2"
+				className="text-black dark:text-white sm:text-3xl text-xl font-bold my-2"
 			>
 				خدماتي
 			</h2>
@@ -29,7 +29,7 @@ const Services = () => {
 							تصميم واجهات متجاوبة
 						</h3>
 					</div>
-					<p className="body sm:text-lg text-base text-black dark:text-white leading-loose">
+					<p className="body sm:text-lg text-sm mt-1 text-black dark:text-white leading-loose">
 						تطوير واجهات ويب حديثة تعمل بكفاءة على جميع الأجهزة، مع ضمان تجربة
 						مستخدم متكاملة.
 					</p>
@@ -47,7 +47,7 @@ const Services = () => {
 							تطوير تطبيقات React
 						</h3>
 					</div>
-					<p className="body sm:text-lg text-base text-black dark:text-white leading-loose">
+					<p className="body sm:text-lg text-sm mt-1 text-black dark:text-white leading-loose">
 						بناء تطبيقات ويب ديناميكية وقابلة للتطوير باستخدام React، مع التركيز
 						على الأداء والتصميم.
 					</p>
@@ -65,7 +65,7 @@ const Services = () => {
 							تحسين الأداء والتجربة
 						</h3>
 					</div>
-					<p className="body sm:text-lg text-base text-black dark:text-white leading-loose">
+					<p className="body sm:text-lg text-sm mt-1 text-black dark:text-white leading-loose">
 						تحسين سرعة وأداء المواقع لتحسين تجربة المستخدم وتلبية احتياجات
 						العملاء.
 					</p>
@@ -83,7 +83,7 @@ const Services = () => {
 							إدارة مشاريع تقنية
 						</h3>
 					</div>
-					<p className="body sm:text-lg text-base text-black dark:text-white leading-loose">
+					<p className="body sm:text-lg text-sm mt-1 text-black dark:text-white leading-loose">
 						تخطيط وتنفيذ مشاريع برمجية باحترافية لضمان تسليم عالي الجودة وفي
 						الوقت المحدد.
 					</p>
