@@ -71,7 +71,7 @@ const Header = ({ theme, toggleTheme }: HeaderProps) => {
           </div>
         </div>
       </div>
-      <span className="w-full h-[2px] bg-light-border-color dark:bg-dark-border-color block sm:my-7 my-4	" />
+      <span className="w-full h-[2px] bg-light-border-color dark:bg-dark-border-color block sm:my-7 my-4" />
       <div className="social-media flex items-center justify-center gap-4">
         <Suspense fallback={<div>Loading...</div>}>
           <div
@@ -112,6 +112,14 @@ const Header = ({ theme, toggleTheme }: HeaderProps) => {
           )}
         </button>
       </div>
+      <footer>
+				<div className="footer-content mt-6 text-center">
+					<p className="text-sm text-black dark:text-white opacity-80 font-bold hover:opacity-100 transition-opacity cursor-pointer">
+						&copy; <span className="text-primary-color">يوسف سامح</span> 2025 كل
+						الحقوق محفوظة
+					</p>
+				</div>
+			</footer>
     </header>
   );
 };
