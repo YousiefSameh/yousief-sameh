@@ -77,7 +77,6 @@ const Header = ({ theme, toggleTheme }: HeaderProps) => {
         <Suspense fallback={<div>Loading...</div>}>
           <div
             className="card whatsapp bg-light-card-color dark:bg-dark-card-color p-3 rounded-lg shadow-card-shadow w-fit ml-4"
-            aria-hidden="true"
           >
             <a href="https://wa.me/201288565394" target="_blank" rel="noopener noreferrer" aria-label="افتح رابط الواتساب">
               <LazyFaWhatsapp className="text-black dark:text-white w-[30px] h-[30px] hover:text-primary-color dark:hover:text-primary-color transition-all" />
@@ -85,7 +84,6 @@ const Header = ({ theme, toggleTheme }: HeaderProps) => {
           </div>
           <div
             className="card github bg-light-card-color dark:bg-dark-card-color p-3 rounded-lg shadow-card-shadow w-fit ml-4"
-            aria-hidden="true"
           >
             <a href="https://github.com/YousiefSameh" target="_blank" rel="noopener noreferrer" aria-label="افتح رابط GitHub">
               <LazyFaGithub className="text-black dark:text-white w-[30px] h-[30px] hover:text-primary-color dark:hover:text-primary-color transition-all" />
@@ -93,7 +91,6 @@ const Header = ({ theme, toggleTheme }: HeaderProps) => {
           </div>
           <div
             className="card facebook bg-light-card-color dark:bg-dark-card-color p-3 rounded-lg shadow-card-shadow w-fit ml-4"
-            aria-hidden="true"
           >
             <a href="https://www.facebook.com/profile.php?id=100094333458845" target="_blank" rel="noopener noreferrer" aria-label="افتح رابط Facebook">
               <LazyFaFacebook className="text-black dark:text-white w-[30px] h-[30px] hover:text-primary-color dark:hover:text-primary-color transition-all" />
