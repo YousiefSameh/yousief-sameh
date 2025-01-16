@@ -8,7 +8,7 @@ const Services = () => {
 		<section className="services mt-6" aria-labelledby="services-title">
 			<h2
 				id="services-title"
-				className="text-black dark:text-white sm:text-3xl text-xl font-bold my-2"
+				className="text-black dark:text-white sm:text-3xl text-2xl font-bold my-2"
 			>
 				خدماتي
 			</h2>
@@ -17,7 +17,7 @@ const Services = () => {
 				role="list"
 			>
 				<div
-					className="card p-4 cursor-pointer border-[2px] border-light-border-color dark:border-dark-border-color bg-light-card-color dark:bg-dark-card-color shadow-card-shadow rounded-lg"
+					className="card p-4 border-[2px] border-light-border-color dark:border-dark-border-color bg-light-card-color dark:bg-dark-card-color shadow-card-shadow rounded-lg"
 					role="listitem"
 				>
 					<div className="head flex items-center gap-2">
@@ -29,13 +29,13 @@ const Services = () => {
 							تصميم واجهات متجاوبة
 						</h3>
 					</div>
-					<p className="body sm:text-lg text-sm mt-1 text-black dark:text-white leading-loose">
+					<p className="body sm:text-lg text-base text-black dark:text-white leading-loose">
 						تطوير واجهات ويب حديثة تعمل بكفاءة على جميع الأجهزة، مع ضمان تجربة
 						مستخدم متكاملة.
 					</p>
 				</div>
 				<div
-					className="card p-4 cursor-pointer border-[2px] border-light-border-color dark:border-dark-border-color bg-light-card-color dark:bg-dark-card-color shadow-card-shadow rounded-lg"
+					className="card p-4 border-[2px] border-light-border-color dark:border-dark-border-color bg-light-card-color dark:bg-dark-card-color shadow-card-shadow rounded-lg"
 					role="listitem"
 				>
 					<div className="head flex items-center gap-2">
@@ -47,13 +47,13 @@ const Services = () => {
 							تطوير تطبيقات React
 						</h3>
 					</div>
-					<p className="body sm:text-lg text-sm mt-1 text-black dark:text-white leading-loose">
+					<p className="body sm:text-lg text-base text-black dark:text-white leading-loose">
 						بناء تطبيقات ويب ديناميكية وقابلة للتطوير باستخدام React، مع التركيز
 						على الأداء والتصميم.
 					</p>
 				</div>
 				<div
-					className="card p-4 cursor-pointer border-[2px] border-light-border-color dark:border-dark-border-color bg-light-card-color dark:bg-dark-card-color shadow-card-shadow rounded-lg"
+					className="card p-4 border-[2px] border-light-border-color dark:border-dark-border-color bg-light-card-color dark:bg-dark-card-color shadow-card-shadow rounded-lg"
 					role="listitem"
 				>
 					<div className="head flex items-center gap-2">
@@ -65,13 +65,13 @@ const Services = () => {
 							تحسين الأداء والتجربة
 						</h3>
 					</div>
-					<p className="body sm:text-lg text-sm mt-1 text-black dark:text-white leading-loose">
+					<p className="body sm:text-lg text-base text-black dark:text-white leading-loose">
 						تحسين سرعة وأداء المواقع لتحسين تجربة المستخدم وتلبية احتياجات
 						العملاء.
 					</p>
 				</div>
 				<div
-					className="card p-4 cursor-pointer border-[2px] border-light-border-color dark:border-dark-border-color bg-light-card-color dark:bg-dark-card-color shadow-card-shadow rounded-lg"
+					className="card p-4 border-[2px] border-light-border-color dark:border-dark-border-color bg-light-card-color dark:bg-dark-card-color shadow-card-shadow rounded-lg"
 					role="listitem"
 				>
 					<div className="head flex items-center gap-2">
@@ -83,7 +83,7 @@ const Services = () => {
 							إدارة مشاريع تقنية
 						</h3>
 					</div>
-					<p className="body sm:text-lg text-sm mt-1 text-black dark:text-white leading-loose">
+					<p className="body sm:text-lg text-base text-black dark:text-white leading-loose">
 						تخطيط وتنفيذ مشاريع برمجية باحترافية لضمان تسليم عالي الجودة وفي
 						الوقت المحدد.
 					</p>
