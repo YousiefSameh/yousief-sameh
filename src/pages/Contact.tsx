@@ -80,7 +80,7 @@ const Contact = () => {
 			</nav>
 			<div className="content">
 				<SpecialHeader title="تواصل معي" id="content-title" />
-				<div className="some-info flex items-center justify-around mt-8">
+				<div className="some-info flex sm:flex-row gap-6 sm:gap-0 flex-col items-center justify-around mt-8">
 					<div className="email flex items-center justify-center gap-3">
 						<div
 							className="icon bg-light-card-color dark:bg-dark-card-color p-3 rounded-lg shadow-lg w-fit ml-4"
