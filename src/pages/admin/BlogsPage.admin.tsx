@@ -1,12 +1,12 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { SpecialHeader } from '../../components';
+import { SpecialHeader } from '@components/index';
 import { useState } from 'react';
-import { TBlog } from '../../types/blogs';
-import { deleteBlog } from '../../store/blogs/blogs.slice';
-import DeleteModal from '../../components/DeleteModel';
-import { RootState } from '../../store/store';
+import { TBlog } from '@customTypes/blogs';
+import { deleteBlog } from '@store/blogs/blogs.slice';
+import DeleteModal from '@components/DeleteModel';
+import { RootState } from '@store/store';
 
 const BlogsPageAdmin = () => {
   const blogs = useSelector((state: RootState) => state.blogs.blogs);

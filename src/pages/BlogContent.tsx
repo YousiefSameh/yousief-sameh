@@ -1,8 +1,8 @@
 import { Link, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
-import { TBlog } from "../types/blogs";
-import store from "../store/store";
+import { TBlog } from "@customTypes/blogs";
+import store from "@store/store";
 
 const BlogContent = () => {
 	const { id } = useParams<{ id: string }>();

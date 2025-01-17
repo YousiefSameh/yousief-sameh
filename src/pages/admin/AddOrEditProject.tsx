@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addProject, editProject } from "../../store/projects/projects.slice";
-import { TProject } from "../../types/projects";
+import { addProject, editProject } from "@store/projects/projects.slice";
+import { TProject } from "@customTypes/projects";
 import { Link, useParams } from "react-router-dom";
-import { SpecialHeader } from "../../components";
-import { RootState } from "../../store/store";
+import { SpecialHeader } from "@components/index";
+import { RootState } from "@store/store";
 
 const AddOrEditProject = () => {
 	const dispatch = useDispatch();

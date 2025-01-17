@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { SpecialHeader } from "../components";
-import ProjectContainer from "../components/ProjectContainer";
+import { SpecialHeader } from "@components/index";
+import ProjectContainer from "@components/ProjectContainer";
 
 const Projects = () => {
   return (

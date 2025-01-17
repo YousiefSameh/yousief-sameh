@@ -1,22 +1,22 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 // layouts
-import MainLayout from "../layout/main.layout";
+import MainLayout from "@layout/main.layout";
 // components
-import AdminRoute from "../components/AdminRoute";
+import AdminRoute from "@components/AdminRoute";
 
 // pages
-import Home from "../pages/Home";
-import Projects from "../pages/Projects";
-import Blogs from "../pages/Blogs";
-import Contact from "../pages/Contact";
-import Error from "../pages/Error";
-import BlogContent from "../pages/BlogContent";
-import HomePageAdmin from "../pages/admin/HomePage.admin";
-import ProjectsPageAdmin from "../pages/admin/ProjectsPage.admin";
-import AddProjectAdmin from "../pages/admin/AddOrEditProject";
-import BlogsPageAdmin from "../pages/admin/BlogsPage.admin";
-import AddOrEditBlog from "../pages/admin/AddOrEditBlog";
-import LoginPageAdmin from "../pages/admin/LoginPage.admin";
+import Home from "@pages/Home";
+import Projects from "@pages/Projects";
+import Blogs from "@pages/Blogs";
+import Contact from "@pages/Contact";
+import Error from "@pages/Error";
+import BlogContent from "@pages/BlogContent";
+import HomePageAdmin from "@pages/admin/HomePage.admin";
+import ProjectsPageAdmin from "@pages/admin/ProjectsPage.admin";
+import AddProjectAdmin from "@pages/admin/AddOrEditProject";
+import BlogsPageAdmin from "@pages/admin/BlogsPage.admin";
+import AddOrEditBlog from "@pages/admin/AddOrEditBlog";
+import LoginPageAdmin from "@pages/admin/LoginPage.admin";
 
 const router = createBrowserRouter([
   {

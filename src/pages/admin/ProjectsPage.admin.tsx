@@ -1,12 +1,12 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { SpecialHeader } from '../../components';
+import { SpecialHeader } from '@components/index';
 import { useState } from 'react';
-import { TProject } from '../../types/projects';
-import { deleteProject } from '../../store/projects/projects.slice';
-import DeleteModal from '../../components/DeleteModel';
-import { RootState } from '../../store/store';
+import { TProject } from '@customTypes/projects';
+import { deleteProject } from '@store/projects/projects.slice';
+import DeleteModal from '@components/DeleteModel';
+import { RootState } from '@store/store';
 
 const ProjectsPageAdmin = () => {
   const projects = useSelector((state: RootState) => state.projects.projects);

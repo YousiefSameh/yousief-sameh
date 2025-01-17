@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { About, Services, SpecialHeader } from "../components";
+import { About, Services, SpecialHeader } from "@components/index";
 
 const Home = () => {
 	return (

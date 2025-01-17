@@ -1,6 +1,6 @@
 import { Link } from "react-router";
-import { SpecialHeader } from "../components";
-import BlogsContainer from "../components/BlogsContainer";
+import { SpecialHeader } from "@components/index";
+import BlogsContainer from "@components/BlogsContainer";
 
 const Blogs = () => {
 	return (

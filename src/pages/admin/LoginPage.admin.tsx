@@ -1,7 +1,7 @@
 // pages/admin/LoginPage.admin.tsx
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { SpecialHeader } from "../../components";
+import { SpecialHeader } from "@components/index";
 
 const LoginPageAdmin = () => {
   const navigate = useNavigate();

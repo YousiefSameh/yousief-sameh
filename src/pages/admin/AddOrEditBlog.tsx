@@ -1,10 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useParams } from "react-router";
-import { RootState } from "../../store/store";
-import { TBlog } from "../../types/blogs";
 import { useState } from "react";
-import { addBlog, editBlog } from "../../store/blogs/blogs.slice";
-import { SpecialHeader } from "../../components";
+import { Link, useParams } from "react-router";
+import { RootState } from "@store/store";
+import { TBlog } from "@customTypes/blogs";
+import { addBlog, editBlog } from "@store/blogs/blogs.slice";
+import { SpecialHeader } from "@components/index";
 
 const AddOrEditBlog = () => {
   const dispatch = useDispatch();

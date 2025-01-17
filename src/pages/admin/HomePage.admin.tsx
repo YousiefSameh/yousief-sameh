@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { RootState } from "../../store/store";
-import { SpecialHeader } from "../../components";
+import { RootState } from "@store/store";
+import { SpecialHeader } from "@components/index";
 
 const HomePageAdmin = () => {
   const projects = useSelector((state: RootState) => state.projects.projects);

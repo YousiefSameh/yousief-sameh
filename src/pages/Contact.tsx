@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { SpecialHeader } from "../components";
+import { SpecialHeader } from "@components/index";
 import { LuPhoneCall } from "react-icons/lu";
 import { HiMail } from "react-icons/hi";
 import emailjs from "emailjs-com";

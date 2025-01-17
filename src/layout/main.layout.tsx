@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { Outlet } from "react-router-dom";
-import Header from "../components/Header";
+import Header from "@components/Header";
 import { motion } from "framer-motion";
-import CustomCursor from "../components/CustomeCursor";
+import CustomCursor from "@components/CustomeCursor";
 
 const MainLayout = () => {
   const [theme, setTheme] = useState("dark");
