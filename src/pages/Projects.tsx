@@ -13,7 +13,7 @@ const Projects = () => {
         className="bg-light-border-color dark:bg-dark-border-color px-3 md:px-6 py-3 rounded-s-md rounded-tl-md rounded-tr-md md:rounded-tr-none w-full md:w-fit absolute top-0 left-0"
         aria-label="القائمة الرئيسية"
       >
-        <ul className="flex items-center justify-center gap-5">
+        <ul className="flex items-center justify-center md:gap-5 gap-3">
           <li>
             <Link
               to="/"
@@ -53,14 +53,6 @@ const Projects = () => {
         <SpecialHeader title="معرض أعمالي" id="projects-title" />
         <ProjectContainer />
       </div>
-      <footer>
-        <div className="footer-content mt-6 text-center">
-          <p className="md:text-lg text-base text-black dark:text-white opacity-80 font-bold hover:opacity-100 transition-opacity cursor-pointer">
-            &copy; <span className="text-primary-color">يوسف سامح</span> 2025 كل
-            الحقوق محفوظة
-          </p>
-        </div>
-      </footer>
     </main>
   );
 };

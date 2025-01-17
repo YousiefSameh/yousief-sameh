@@ -47,7 +47,7 @@ const Services = () => {
 							تطوير تطبيقات React
 						</h3>
 					</div>
-					<p className="body sm:text-lg text-base text-black dark:text-white leading-loose">
+					<p className="body lg:text-lg text-sm text-black dark:text-white leading-loose">
 						بناء تطبيقات ويب ديناميكية وقابلة للتطوير باستخدام React، مع التركيز
 						على الأداء والتصميم.
 					</p>
@@ -65,7 +65,7 @@ const Services = () => {
 							تحسين الأداء والتجربة
 						</h3>
 					</div>
-					<p className="body sm:text-lg text-base text-black dark:text-white leading-loose">
+					<p className="body lg:text-lg text-sm text-black dark:text-white leading-loose">
 						تحسين سرعة وأداء المواقع لتحسين تجربة المستخدم وتلبية احتياجات
 						العملاء.
 					</p>
@@ -83,7 +83,7 @@ const Services = () => {
 							إدارة مشاريع تقنية
 						</h3>
 					</div>
-					<p className="body sm:text-lg text-base text-black dark:text-white leading-loose">
+					<p className="body lg:text-lg text-sm text-black dark:text-white leading-loose">
 						تخطيط وتنفيذ مشاريع برمجية باحترافية لضمان تسليم عالي الجودة وفي
 						الوقت المحدد.
 					</p>

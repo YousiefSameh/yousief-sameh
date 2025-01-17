@@ -27,7 +27,7 @@ const BlogContent = () => {
 				className="bg-light-border-color dark:bg-dark-border-color px-3 md:px-6 py-3 rounded-s-md rounded-tl-md rounded-tr-md md:rounded-tr-none w-full md:w-fit absolute top-0 left-0"
 				aria-label="القائمة الرئيسية"
 			>
-				<ul className="flex items-center justify-center gap-5">
+				<ul className="flex items-center justify-center md:gap-5 gap-3">
 					<li>
 						<Link
 							to="/"

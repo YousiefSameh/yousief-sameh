@@ -41,7 +41,7 @@ const Contact = () => {
 				className="bg-light-border-color dark:bg-dark-border-color px-3 md:px-6 py-3 rounded-s-md rounded-tl-md rounded-tr-md md:rounded-tr-none w-full md:w-fit absolute top-0 left-0"
 				aria-label="الرئيسية"
 			>
-				<ul className="flex items-center justify-center gap-5">
+				<ul className="flex items-center justify-center md:gap-5 gap-3">
 					<li>
 						<Link
 							to="/"
@@ -85,13 +85,13 @@ const Contact = () => {
 							className="icon bg-light-card-color dark:bg-dark-card-color sm:p-3 p-2 rounded-lg shadow-lg w-fit ml-4"
 							aria-hidden="true"
 						>
-							<HiMail className="sm:w-[40px] sm:h-[40px] w-[35px] h-[35px] text-primary-color" />
+							<HiMail className="lg:w-[40px] lg:h-[40px] w-[35px] h-[35px] text-primary-color" />
 						</div>
 						<div className="text">
-							<h3 className="sm:text-[16px] text-[14px] font-medium text-gray-700 dark:text-gray-300">
+							<h3 className="lg:text-[16px] text-[14px] font-medium text-gray-700 dark:text-gray-300">
 								البريد الإلكتروني
 							</h3>
-							<p className="sm:text-[18px] text-[16px] font-medium text-black dark:text-white">
+							<p className="lg:text-[18px] text-[16px] font-medium text-black dark:text-white">
 								<a
 									href="mailto:yousief.sameh@outlook.com"
 									aria-label="البريد الإلكتروني: yousief.sameh@outlook.com"
@@ -106,13 +106,13 @@ const Contact = () => {
 							className="icon bg-light-card-color dark:bg-dark-card-color sm:p-3 p-2 rounded-lg shadow-lg w-fit ml-4"
 							aria-hidden="true"
 						>
-							<LuPhoneCall className="sm:w-[40px] sm:h-[40px] w-[35px] h-[35px] text-primary-color" />
+							<LuPhoneCall className="lg:w-[40px] lg:h-[40px] w-[35px] h-[35px] text-primary-color" />
 						</div>
 						<div className="text">
-							<h3 className="sm:text-[16px] text-[14px] font-medium text-gray-700 dark:text-gray-300">
+							<h3 className="lg:text-[16px] text-[14px] font-medium text-gray-700 dark:text-gray-300">
 								رقم التليفون (واتساب ومكالمات)
 							</h3>
-							<p className="sm:text-[18px] text-[16px] font-medium text-black dark:text-white">
+							<p className="lg:text-[18px] text-[16px] font-medium text-black dark:text-white">
 								<a
 									href="tel:+201288565394"
 									aria-label="اتصل برقم الهاتف: +20 128-856-5394"

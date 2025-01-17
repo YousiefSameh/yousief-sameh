@@ -18,10 +18,10 @@ const BlogsContainer = () => {
 						<span className="text-primary-color uppercase font-bold sm:text-lg text-base block">
 							{blog.publishedDate}
 						</span>
-						<h3 className="sm:text-2xl text-lg font-bold text-black dark:text-white">
+						<h3 className="md:text-2xl text-lg font-bold text-black dark:text-white">
 							{blog.title}
 						</h3>
-						<p className="sm:text-base text-sm md:mt-0 mt-1 leading-loose text-black dark:text-white opacity-80">
+						<p className="lg:text-base text-sm md:mt-0 mt-1 leading-loose text-black dark:text-white opacity-80">
 							{blog.description}
 						</p>
 					</div>

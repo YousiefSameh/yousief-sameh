@@ -1,8 +1,8 @@
 import React, { Suspense } from "react";
-import { HiMail } from "react-icons/hi";
-import { LuPhoneCall } from "react-icons/lu";
 
 // Lazy load icons
+const LazyHiMail = React.lazy(() => import("react-icons/hi").then(mod => ({ default: mod.HiMail })));
+const LazyLuPhoneCall = React.lazy(() => import("react-icons/lu").then(mod => ({ default: mod.LuPhoneCall })));
 const LazyFaFacebook = React.lazy(() => import("react-icons/fa").then(mod => ({ default: mod.FaFacebook })));
 const LazyFaGithub = React.lazy(() => import("react-icons/fa").then(mod => ({ default: mod.FaGithub })));
 const LazyFaWhatsapp = React.lazy(() => import("react-icons/fa").then(mod => ({ default: mod.FaWhatsapp })));
@@ -35,17 +35,17 @@ const Header = ({ theme, toggleTheme }: HeaderProps) => {
         </div>
       </div>
       <span className="w-full h-[2px] bg-light-border-color dark:bg-dark-border-color block sm:my-7 my-4" />
-      <div className="details flex flex-col gap-6">
+      <div className="details flex flex-col justify-around md:flex-row lg:flex-col gap-6">
         <div className="email flex items-center justify-center gap-3">
           <div
             className="icon bg-light-card-color dark:bg-dark-card-color sm:p-3 p-2 rounded-lg shadow-lg w-fit ml-4"
             aria-hidden="true"
           >
-            <HiMail className="sm:w-[40px] sm:h-[40px] w-[35px] h-[35px] text-primary-color" />
+            <LazyHiMail className="lg:w-[40px] lg:h-[40px] w-[35px] h-[35px] text-primary-color" />
           </div>
           <div className="text">
-            <h3 className="sm:text-[16px] text-[14px] font-medium text-gray-700 dark:text-gray-300">البريد الإلكتروني</h3>
-            <p className="sm:text-[18px] text-[16px] font-medium text-black dark:text-white">
+            <h3 className="lg:text-[16px] text-[14px] font-medium text-gray-700 dark:text-gray-300">البريد الإلكتروني</h3>
+            <p className="lg:text-[18px] text-[16px] font-medium text-black dark:text-white">
               <a href="mailto:yousief.sameh@outlook.com" aria-label="البريد الإلكتروني: yousief.sameh@outlook.com">
                 yousief.sameh@outlook.com
               </a>
@@ -57,13 +57,13 @@ const Header = ({ theme, toggleTheme }: HeaderProps) => {
             className="icon bg-light-card-color dark:bg-dark-card-color sm:p-3 p-2 rounded-lg shadow-lg w-fit ml-4"
             aria-hidden="true"
           >
-            <LuPhoneCall className="sm:w-[40px] sm:h-[40px] w-[35px] h-[35px] text-primary-color" />
+            <LazyLuPhoneCall className="lg:w-[40px] lg:h-[40px] w-[35px] h-[35px] text-primary-color" />
           </div>
           <div className="text">
-            <h3 className="sm:text-[16px] text-[14px] font-medium text-gray-700 dark:text-gray-300">
+            <h3 className="lg:text-[16px] text-[14px] font-medium text-gray-700 dark:text-gray-300">
               رقم التليفون (واتساب ومكالمات)
             </h3>
-            <p className="sm:text-[18px] text-[16px] font-medium text-black dark:text-white">
+            <p className="lg:text-[18px] text-[16px] font-medium text-black dark:text-white">
               <a href="tel:+201288565394" aria-label="اتصل برقم الهاتف: +20 128-856-5394">
                 128-856-5394 (20)+
               </a>

@@ -32,7 +32,7 @@ const MainLayout = () => {
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
         <motion.div
-          className="container mx-auto flex flex-col sm:items-start items-center sm:flex-row justify-between"
+          className="container mx-auto flex flex-col lg:items-start items-center lg:flex-row justify-between"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -41,12 +41,12 @@ const MainLayout = () => {
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="static md:sticky top-0 left-0 z-50 py-[50px] md:w-fit w-[90%]"
+            className="static lg:sticky top-0 left-0 z-50 py-[50px] lg:w-fit w-[90%]"
           >
             <Header theme={theme} toggleTheme={toggleTheme} />
           </motion.div>
           <motion.div
-            className="wrapper w-[90%] md:w-[70%] py-[50px]"
+            className="wrapper w-[90%] lg:w-[70%] py-[50px]"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
