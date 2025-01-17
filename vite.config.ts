@@ -2,7 +2,6 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import viteCompression from 'vite-plugin-compression';
 import { imagetools } from 'vite-imagetools';
-import removeConsole from 'vite-plugin-remove-console';
 import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
@@ -17,10 +16,6 @@ export default defineConfig({
 
     imagetools(),
     tsconfigPaths(),
-
-    removeConsole({
-      includes: ['**/*.js', '**/*.ts'],
-    }),
   ],
 
   build: {
