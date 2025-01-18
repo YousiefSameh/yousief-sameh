@@ -30,7 +30,7 @@ export default {
       },
       fontFamily: {
         "tajawal": ["Tajawal", "sans-serif"],
-        "poppins": ["Poppins", "sans-serif"],
+        "roboto": ["Roboto", "sans-serif"],
       }
     },
   },

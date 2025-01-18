@@ -46,10 +46,10 @@ const Header = ({ theme, lang, setLang, toggleTheme }: HeaderProps) => {
 	};
 	return (
 		<header className="bg-light-container-color dark:bg-dark-container-color border-[2px] border-light-border-color dark:border-dark-border-color py-8 px-5 rounded-lg w-full">
-			<div className="profile flex items-center gap-1 justify-center">
+			<div className="profile flex items-center gap-5 justify-center">
 				<img
 					src="/assets/profile.webp"
-					className={`sm:w-[75px] sm:h-[75px] w-[65px] h-[65px] border-[3px] border-primary-color rounded-full ${lang === "en" ? "mr-[20px]" : "ml-[20px]"}`}
+					className="sm:w-[75px] sm:h-[75px] w-[65px] h-[65px] border-[3px] border-primary-color rounded-full"
 					alt="صورة يوسف سامح، مطور واجهات أمامية"
 					width="75"
 					height="75"
@@ -79,10 +79,10 @@ const Header = ({ theme, lang, setLang, toggleTheme }: HeaderProps) => {
 						<LazyHiMail className="lg:w-[40px] lg:h-[40px] w-[35px] h-[35px] text-primary-color" />
 					</div>
 					<div className="text">
-						<h3 className="lg:text-[14px] text-[12px] font-medium text-gray-700 dark:text-gray-300">
+						<h3 className="lg:text-[16px] text-[14px] font-medium text-gray-700 dark:text-gray-300">
 							{t("email")}
 						</h3>
-						<p className="lg:text-[16px] text-[14px] font-medium text-black dark:text-white">
+						<p className="lg:text-[18px] text-[16px] font-medium text-black dark:text-white">
 							<a
 								href="mailto:yousief.sameh@outlook.com"
 								aria-label="البريد الإلكتروني: yousief.sameh@outlook.com"
@@ -100,10 +100,10 @@ const Header = ({ theme, lang, setLang, toggleTheme }: HeaderProps) => {
 						<LazyLuPhoneCall className="lg:w-[40px] lg:h-[40px] w-[35px] h-[35px] text-primary-color" />
 					</div>
 					<div className="text">
-						<h3 className="lg:text-[14px] text-[12px] font-medium text-gray-700 dark:text-gray-300">
+						<h3 className="lg:text-[16px] text-[14px] font-medium text-gray-700 dark:text-gray-300">
 							{t("phoneorwhatsapp")}
 						</h3>
-						<p className="lg:text-[16px] text-[14px] font-medium text-black dark:text-white">
+						<p className="lg:text-[18px] text-[16px] font-medium text-black dark:text-white">
 							<a
 								href="tel:+201288565394"
 								aria-label="اتصل برقم الهاتف: +20 128-856-5394"

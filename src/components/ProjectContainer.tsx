@@ -31,7 +31,7 @@ const ProjectContainer = () => {
 						activeCategory === "react"
 							? "bg-primary-color text-black"
 							: "bg-light-border-color dark:bg-dark-border-color"
-					} hover:bg-primary-color dark:hover:bg-primary-color hover:text-black dark:hover:text-white transition-all`}
+					} hover:bg-primary-color dark:hover:bg-primary-color hover:text-black dark:hover:text-white transition-all font-roboto`}
 				>
 					<span>React</span>
 				</button>
@@ -41,7 +41,7 @@ const ProjectContainer = () => {
 						activeCategory === "javascript"
 							? "bg-primary-color text-black"
 							: "bg-light-border-color dark:bg-dark-border-color"
-					} hover:bg-primary-color dark:hover:bg-primary-color hover:text-black dark:hover:text-white transition-all`}
+					} hover:bg-primary-color dark:hover:bg-primary-color hover:text-black dark:hover:text-white transition-all font-roboto`}
 				>
 					<span>JavaScript</span>
 				</button>
@@ -51,7 +51,7 @@ const ProjectContainer = () => {
 						activeCategory === "html & css"
 							? "bg-primary-color text-black"
 							: "bg-light-border-color dark:bg-dark-border-color"
-					} hover:bg-primary-color dark:hover:bg-primary-color hover:text-black dark:hover:text-white transition-all`}
+					} hover:bg-primary-color dark:hover:bg-primary-color hover:text-black dark:hover:text-white transition-all font-roboto`}
 				>
 					<span>HTML & CSS</span>
 				</button>

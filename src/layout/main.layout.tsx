@@ -36,7 +36,7 @@ const MainLayout = React.memo(() => {
 					theme === "dark"
 						? "bg-dark-background-color"
 						: "bg-light-background-color"
-				} min-h-screen text-white transition-colors ${lang === "ar" ? "font-tajawal" : "font-poppins"}`}
+				} min-h-screen text-white transition-colors ${lang === "ar" ? "font-tajawal" : "font-roboto"}`}
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
 				transition={{ duration: 0.3 }}
