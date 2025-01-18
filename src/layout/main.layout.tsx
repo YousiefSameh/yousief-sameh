@@ -51,7 +51,7 @@ const MainLayout = React.memo(() => {
 						initial={{ opacity: 0, x: -50 }}
 						animate={{ opacity: 1, x: 0 }}
 						transition={{ duration: 0.5 }}
-						className="static lg:sticky top-0 left-0 z-50 py-[30px] lg:w-fit max-w-[30%] w-[90%]"
+						className="static lg:sticky top-0 left-0 z-50 py-[30px] lg:w-fit w-[90%]"
 					>
 						<Header
 							theme={theme}
