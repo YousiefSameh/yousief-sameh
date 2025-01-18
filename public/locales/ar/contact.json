@@ -1,0 +1,14 @@
+{
+	"title": "تواصل معي",
+	"phone": "رقم التليفون (واتساب ومكالمات)",
+	"phoneNumber": "+ (20) 128-856-5394",
+	"email": "البريد الإلكتروني",
+	"emailAddress": "yousief.sameh@outlook.com",
+	"sendMessage": "أرسل لي رسالة !",
+	"fullName": "الاسم بالكامل",
+	"fullNamePlaceholder": "اكتب اسمك بالكامل هنا ...",
+	"emailPlaceholder": "اكتب البريد الإلكتروني هنا ...",
+	"message": "الرسالة",
+	"messagePlaceholder": "اكتب الرسالة هنا ...",
+	"sendButton": "إرسال"
+}

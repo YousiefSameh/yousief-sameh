@@ -3,11 +3,23 @@ import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import { TBlog } from "@customTypes/blogs";
 import store from "@store/store";
+import { useTranslation } from "react-i18next";
+import { useEffect, useState } from "react";
 
 const BlogContent = () => {
 	const { id } = useParams<{ id: string }>();
 	const { blogs } = useSelector(() => store.getState().blogs);
 	const blog = blogs.find((blog: TBlog) => blog.id === parseInt(id || "", 10));
+
+	const { t } = useTranslation("navLinks");
+	const [lang, setLang] = useState("");
+
+	useEffect(() => {
+		const Lng = localStorage.getItem("i18nextLng");
+		if (Lng) {
+			setLang(Lng);
+		}
+	}, [localStorage.getItem("i18nextLng")]);
 
 	if (!blog) {
 		return (
@@ -17,6 +29,7 @@ const BlogContent = () => {
 		);
 	}
 
+
 	return (
 		<main
 			className="bg-light-container-color dark:bg-dark-container-color border-[2px] border-light-border-color dark:border-dark-border-color p-4 md:p-8 rounded-lg w-full relative"
@@ -24,7 +37,11 @@ const BlogContent = () => {
 			aria-labelledby="blogs-title"
 		>
 			<nav
-				className="bg-light-border-color dark:bg-dark-border-color px-3 md:px-6 py-3 rounded-s-md rounded-tl-md rounded-tr-md md:rounded-tr-none w-full md:w-fit absolute top-0 left-0"
+				className={`bg-light-border-color dark:bg-dark-border-color px-3 md:px-6 py-3 w-full md:w-fit absolute top-0 rounded-s-md ${
+					lang === "ar"
+						? "left-0 rounded-tl-md rounded-tr-md md:rounded-tr-none"
+						: "right-0 rounded-tr-md rounded-tl-md md:rounded-tl-none"
+				}`}
 				aria-label="القائمة الرئيسية"
 			>
 				<ul className="flex items-center justify-center md:gap-5 gap-3">
@@ -34,7 +51,7 @@ const BlogContent = () => {
 							className="text-black dark:text-white font-bold hover:text-primary-color dark:hover:text-primary-color transition-colors text-[13px] md:text-base"
 							aria-current="page"
 						>
-							الرئيسية
+							{t("home")}
 						</Link>
 					</li>
 					<li>
@@ -42,7 +59,7 @@ const BlogContent = () => {
 							to="/projects"
 							className="text-black dark:text-white font-bold hover:text-primary-color dark:hover:text-primary-color transition-colors text-[13px] md:text-base"
 						>
-							معرض اعمالي
+							{t("projects")}
 						</Link>
 					</li>
 					<li>
@@ -50,7 +67,7 @@ const BlogContent = () => {
 							to="/blogs"
 							className="text-primary-color font-bold text-[13px] md:text-base"
 						>
-							المدونات
+							{t("blogs")}
 						</Link>
 					</li>
 					<li>
@@ -58,7 +75,7 @@ const BlogContent = () => {
 							to="/contact"
 							className="text-black dark:text-white font-bold hover:text-primary-color dark:hover:text-primary-color transition-colors text-[13px] md:text-base"
 						>
-							تواصل معي
+							{t("contact")}
 						</Link>
 					</li>
 				</ul>

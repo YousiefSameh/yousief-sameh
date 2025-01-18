@@ -2,36 +2,73 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  font-family: 'Tajawal', sans-serif;
+@font-face {
+  font-family: 'Tajawal';
+  src: url('/fonts/Tajawal-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Tajawal';
+  src: url('/fonts/Tajawal-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Tajawal';
+  src: url('/fonts/Tajawal-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
 }
 
 ::-webkit-scrollbar {
-  width: 15px;
-  height: 15px;
+	width: 15px;
+	height: 15px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #222;
+	background: #222;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #2DC653;
-
+	background: #2dc653;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #25A244;
+	background: #25a244;
 }
 
 @layer base {
-  .btn-primary {
-    @apply inline-block px-6 py-3 text-xl font-bold text-white bg-primary-color rounded-lg hover:bg-hover-color transition duration-300;
-  }
-  .line {
-    @apply block w-24 h-[3px] bg-primary-color mt-4;
-  }
-  .input {
-    @apply h-[40px] w-full rounded-lg shadow-card-shadow shadow-primary-color/25 bg-transparent px-6 py-[5px] focus:shadow-primary-color/40 outline-none placeholder:text-black/80 dark:placeholder:text-white/80 font-semibold text-black dark:text-white
-  }
+	.btn-primary {
+		@apply inline-block px-6 py-3 text-xl font-bold text-white bg-primary-color rounded-lg hover:bg-hover-color transition duration-300;
+	}
+	.line {
+		@apply block w-24 h-[3px] bg-primary-color mt-4;
+	}
+	.input {
+		@apply h-[40px] w-full rounded-lg shadow-card-shadow shadow-primary-color/25 bg-transparent px-6 py-[5px] focus:shadow-primary-color/40 outline-none placeholder:text-black/80 dark:placeholder:text-white/80 font-semibold text-black dark:text-white;
+	}
 }

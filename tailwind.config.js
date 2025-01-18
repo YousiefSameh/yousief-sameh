@@ -28,6 +28,10 @@ export default {
       boxShadow: {
         "card-shadow": "0px 0px 4px 2px rgb(17, 17, 17, 0.25)",
       },
+      fontFamily: {
+        "tajawal": ["Tajawal", "sans-serif"],
+        "poppins": ["Poppins", "sans-serif"],
+      }
     },
   },
   plugins: [],

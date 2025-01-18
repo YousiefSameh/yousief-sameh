@@ -1,0 +1,21 @@
+{
+	"title": "Home",
+
+	"about": "About Me",
+	"aboutDescription1": "I am Yousief Sameh, a front-end developer specializing in building advanced web applications using the React library. My passion lies in transforming ideas into smooth and attractive user interfaces, focusing on delivering an exceptional user experience. I have experience in designing and developing responsive and elegant websites, ensuring optimal performance and scalability.",
+	"aboutDescription2": "I constantly follow the latest technologies and trends in web development, enabling me to provide innovative and practical solutions that meet clients' needs. I enjoy working on new challenges and collaborating with multidisciplinary teams to accomplish projects that make a real impact. For me, programming is not just a profession but a means of creativity and problem-solving.",
+
+	"services": "My Services",
+
+	"frontEndDevelopment": "Responsive Interface Design",
+	"frontEndDevelopmentDescription": "Building dynamic and scalable web applications using React with a focus on performance and design.",
+
+	"reactDevelopment": "React Development",
+	"reactDevelopmentDescription": "Building dynamic and scalable web applications using React with a focus on performance and design.",
+
+	"performanceOptimization": "Performance Optimization",
+	"performanceOptimizationDescription": "Improving site speed and performance to enhance user experience and meet client needs.",
+  
+	"manageTechProjects": "Managing Tech Projects",
+	"manageTechProjectsDescription": "Improving site speed and performance to enhance user experience and meet client needs."
+}

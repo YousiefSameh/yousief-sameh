@@ -1,0 +1,12 @@
+{
+	"title": "Contact Me",
+	"phone": "Phone (WhatsApp and Calls)",
+	"email": "Email",
+	"sendMessage": "Send Me a Message!",
+	"fullName": "Full Name",
+	"fullNamePlaceholder": "Enter your full name here ...",
+	"emailPlaceholder": "Enter your email here ...",
+	"message": "Message",
+	"messagePlaceholder": "Write your message here ...",
+	"sendButton": "Send"
+}

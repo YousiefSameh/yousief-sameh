@@ -2,20 +2,32 @@ import { FaEye, FaGithub } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@store/store";
 import { setActiveCategory } from "@store/projects/projects.slice";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const ProjectContainer = () => {
 	const dispatch = useDispatch();
-	const { filteredProjects, activeCategory } = useSelector((state: RootState) => state.projects);
+	const { filteredProjects, activeCategory } = useSelector(
+		(state: RootState) => state.projects
+	);
 	useEffect(() => {
 		dispatch(setActiveCategory("all"));
 	}, [dispatch]);
+
+	const [lang, setLang] = useState("");
+
+	useEffect(() => {
+		const Lng = localStorage.getItem("i18nextLng");
+		if (Lng) {
+			setLang(Lng);
+		}
+	}, [localStorage.getItem("i18nextLng")]);
+
 	return (
 		<>
-			<nav className="categories flex items-center justify-center gap-6 mt-6 flex-wrap">
+			<nav className={`categories flex ${lang === "ar" ? "flex-row" : "flex-row-reverse"} items-center justify-center gap-6 mt-6 flex-wrap`}>
 				<button
 					onClick={() => dispatch(setActiveCategory("react"))}
-					className={`category-btn w-full md:w-[120px] text-black dark:text-white font-bold text-[13px] md:text-base shadow-card-shadow shadow-primary-color/40 py-2 px-4 rounded-lg ${
+					className={`category-btn w-full md:w-[130px] text-black dark:text-white font-bold text-[13px] md:text-base shadow-card-shadow shadow-primary-color/40 py-2 px-4 rounded-lg ${
 						activeCategory === "react"
 							? "bg-primary-color text-black"
 							: "bg-light-border-color dark:bg-dark-border-color"
@@ -25,7 +37,7 @@ const ProjectContainer = () => {
 				</button>
 				<button
 					onClick={() => dispatch(setActiveCategory("javascript"))}
-					className={`category-btn w-full md:w-[120px] text-black dark:text-white font-bold text-[13px] md:text-base shadow-card-shadow shadow-primary-color/40 py-2 px-4 rounded-lg ${
+					className={`category-btn w-full md:w-[130px] text-black dark:text-white font-bold text-[13px] md:text-base shadow-card-shadow shadow-primary-color/40 py-2 px-4 rounded-lg ${
 						activeCategory === "javascript"
 							? "bg-primary-color text-black"
 							: "bg-light-border-color dark:bg-dark-border-color"
@@ -35,7 +47,7 @@ const ProjectContainer = () => {
 				</button>
 				<button
 					onClick={() => dispatch(setActiveCategory("html & css"))}
-					className={`category-btn w-full md:w-[120px] text-black dark:text-white font-bold text-[13px] md:text-base shadow-card-shadow shadow-primary-color/40 py-2 px-4 rounded-lg ${
+					className={`category-btn w-full md:w-[130px] text-black dark:text-white font-bold text-[13px] md:text-base shadow-card-shadow shadow-primary-color/40 py-2 px-4 rounded-lg ${
 						activeCategory === "html & css"
 							? "bg-primary-color text-black"
 							: "bg-light-border-color dark:bg-dark-border-color"
@@ -45,13 +57,13 @@ const ProjectContainer = () => {
 				</button>
 				<button
 					onClick={() => dispatch(setActiveCategory("all"))}
-					className={`category-btn w-full md:w-[120px] text-black dark:text-white font-bold text-[13px] md:text-base shadow-card-shadow shadow-primary-color/40 py-2 px-4 rounded-lg ${
+					className={`category-btn w-full md:w-[130px] text-black dark:text-white font-bold text-[13px] md:text-base shadow-card-shadow shadow-primary-color/40 py-2 px-4 rounded-lg ${
 						activeCategory === "all"
 							? "bg-primary-color text-black"
 							: "bg-light-border-color dark:bg-dark-border-color"
 					} hover:bg-primary-color dark:hover:bg-primary-color hover:text-black dark:hover:text-white transition-all`}
 				>
-					<span>الكل</span>
+					<span>{lang === "ar" ? "الكل" : "All"}</span>
 				</button>
 			</nav>
 			<main className="projects-container grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">

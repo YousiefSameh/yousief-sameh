@@ -7,13 +7,11 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 export default defineConfig({
   plugins: [
     react(),
-
     viteCompression({
       algorithm: 'brotliCompress',
       ext: '.br',
       threshold: 1024,
     }),
-
     imagetools(),
     tsconfigPaths(),
   ],
@@ -25,11 +23,20 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          vendor: ['react', 'react-dom']
+          react: ['react', 'react-dom'],
+          reactIcons: ['react-icons'],
+          vendor: ['lodash', 'axios'],
         },
       },
     },
     minify: 'terser',
+    terserOptions: {
+      compress: true,
+      mangle: true,
+      format: {
+        comments: false,
+      },
+    },
   },
 
   server: {
@@ -41,6 +48,6 @@ export default defineConfig({
   assetsInclude: ['**/*.woff', '**/*.woff2', '**/*.ttf'],
 
   optimizeDeps: {
-    include: ['react', 'react-dom'],
+    include: ['react', 'react-dom', 'react-icons'],
   },
 });
