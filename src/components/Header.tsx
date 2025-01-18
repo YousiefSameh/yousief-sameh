@@ -175,15 +175,17 @@ const Header = ({ theme, lang, setLang, toggleTheme }: HeaderProps) => {
               <img
                 src="/assets/ar.png"
                 className="sm:w-[30px] sm:h-[30px] w-[25px] h-[25px]"
-              />
+								alt="Change To Arabic Language"
+							/>
               <h5 className="text-lg font-bold text-black dark:text-white font-tajawal">العربية</h5>
             </Suspense>
           ) : (
-            <Suspense fallback={<div>...</div>}>
+						<Suspense fallback={<div>...</div>}>
               <img
                 src="/assets/en.png"
                 className="sm:w-[30px] sm:h-[30px] w-[25px] h-[25px]"
-                />
+								alt="Change To English Language"
+							/>
               <h5 className="text-lg font-bold text-black dark:text-white font-poppins">English</h5>
             </Suspense>
           )}
