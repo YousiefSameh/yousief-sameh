@@ -25,7 +25,6 @@ export default defineConfig({
         manualChunks: {
           react: ['react', 'react-dom'],
           reactIcons: ['react-icons'],
-          vendor: ['lodash', 'axios'],
         },
       },
     },
