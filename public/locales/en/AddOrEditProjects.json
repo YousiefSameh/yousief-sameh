@@ -1,0 +1,22 @@
+{
+  "general": {
+    "home": "Home",
+    "projects": "Projects",
+    "blogs": "Blogs"
+  },
+  "projects": {
+    "editProject": "Edit Project",
+    "addProject": "Add Project",
+    "projectTitleAr": "Project Title (Arabic)",
+    "projectTitleEn": "Project Title (English)",
+    "projectSubtitleAr": "Project Subtitle (Arabic)",
+    "projectSubtitleEn": "Project Subtitle (English)",
+    "projectURL": "Project URL",
+    "githubURL": "Github URL",
+    "projectImage": "Project Image",
+    "categoryAr": "Category (Arabic)",
+    "categoryEn": "Category (English)",
+    "saveChanges": "Save Changes",
+    "addProjectButton": "Add Project"
+  }
+}

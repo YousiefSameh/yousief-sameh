@@ -1,0 +1,8 @@
+{
+  "home": "Home",
+  "projects": "Projects",
+  "blogs": "Blogs",
+  "adminTitle": "Admin Home Page",
+  "projectsCount": "Number of Projects: {{count}}",
+  "blogsCount": "Number of Blogs: {{count}}"
+}

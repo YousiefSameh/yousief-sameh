@@ -1,0 +1,16 @@
+{
+  "home": "Home",
+  "projects": "Projects",
+  "blogs": "Blogs",
+  "adminTitle": "Blogs Management",
+  "addBlog": "+ Add Blog",
+  "blogTitle": "Blog Title",
+  "description": "Description",
+  "publishDate": "Publish Date",
+  "actions": "Actions",
+  "edit": "Edit",
+  "delete": "Delete",
+  "deleteConfirmation": "Are you sure you want to delete this blog?",
+  "loading": "Loading...",
+  "error": "Error: {{error}}"
+}

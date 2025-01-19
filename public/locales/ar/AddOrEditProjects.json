@@ -1,0 +1,22 @@
+{
+  "general": {
+    "home": "الرئيسية",
+    "projects": "معرض اعمالي",
+    "blogs": "المدونات"
+  },
+  "projects": {
+    "editProject": "تعديل المشروع",
+    "addProject": "إضافة مشروع",
+    "projectTitleAr": "عنوان المشروع (عربي)",
+    "projectTitleEn": "عنوان المشروع (إنجليزي)",
+    "projectSubtitleAr": "وصف المشروع (عربي)",
+    "projectSubtitleEn": "وصف المشروع (إنجليزي)",
+    "projectURL": "رابط المشروع",
+    "githubURL": "رابط Github",
+    "projectImage": "صورة المشروع",
+    "categoryAr": "نوع المشروع (عربي)",
+    "categoryEn": "نوع المشروع (إنجليزي)",
+    "saveChanges": "حفظ التعديلات",
+    "addProjectButton": "إضافة مشروع"
+  }
+}

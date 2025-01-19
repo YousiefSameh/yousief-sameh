@@ -1,17 +1,13 @@
 import { FaEye, FaGithub } from "react-icons/fa";
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "@store/store";
-import { setActiveCategory } from "@store/projects/projects.slice";
+import { actionGetProjects, setActiveCategory } from "@store/projects/projects.slice";
 import { useEffect, useState } from "react";
+import { useAppDispatch, useAppSelector } from "@store/hooks";
 
 const ProjectContainer = () => {
-	const dispatch = useDispatch();
-	const { filteredProjects, activeCategory } = useSelector(
-		(state: RootState) => state.projects
+	const dispatch = useAppDispatch();
+	const projects = useAppSelector(
+		(state) => state.projects
 	);
-	useEffect(() => {
-		dispatch(setActiveCategory("all"));
-	}, [dispatch]);
 
 	const [lang, setLang] = useState("");
 
@@ -22,13 +18,23 @@ const ProjectContainer = () => {
 		}
 	}, [localStorage.getItem("i18nextLng")]);
 
+		useEffect(() => {
+			if (projects.projects.length === 0) {
+				dispatch(actionGetProjects());
+			}
+			dispatch(setActiveCategory("all"));
+		}, [dispatch, projects.projects.length]);
+	
+		if (projects.loading === 'pending') return <div className="mt-6 text-black dark:text-white">Loading...</div>;
+		if (projects.error) return <div className="mt-6 text-red-600">Error: {projects.error}</div>;
+
 	return (
 		<>
 			<nav className={`categories flex ${lang === "ar" ? "flex-row" : "flex-row-reverse"} items-center justify-center gap-6 mt-6 flex-wrap`}>
 				<button
 					onClick={() => dispatch(setActiveCategory("react"))}
 					className={`category-btn w-full md:w-[130px] text-black dark:text-white font-bold text-[13px] md:text-base shadow-card-shadow shadow-primary-color/40 py-2 px-4 rounded-lg ${
-						activeCategory === "react"
+						projects.activeCategory === "react"
 							? "bg-primary-color text-black"
 							: "bg-light-border-color dark:bg-dark-border-color"
 					} hover:bg-primary-color dark:hover:bg-primary-color hover:text-black dark:hover:text-white transition-all font-roboto`}
@@ -38,7 +44,7 @@ const ProjectContainer = () => {
 				<button
 					onClick={() => dispatch(setActiveCategory("javascript"))}
 					className={`category-btn w-full md:w-[130px] text-black dark:text-white font-bold text-[13px] md:text-base shadow-card-shadow shadow-primary-color/40 py-2 px-4 rounded-lg ${
-						activeCategory === "javascript"
+						projects.activeCategory === "javascript"
 							? "bg-primary-color text-black"
 							: "bg-light-border-color dark:bg-dark-border-color"
 					} hover:bg-primary-color dark:hover:bg-primary-color hover:text-black dark:hover:text-white transition-all font-roboto`}
@@ -48,7 +54,7 @@ const ProjectContainer = () => {
 				<button
 					onClick={() => dispatch(setActiveCategory("html & css"))}
 					className={`category-btn w-full md:w-[130px] text-black dark:text-white font-bold text-[13px] md:text-base shadow-card-shadow shadow-primary-color/40 py-2 px-4 rounded-lg ${
-						activeCategory === "html & css"
+						projects.activeCategory === "html & css"
 							? "bg-primary-color text-black"
 							: "bg-light-border-color dark:bg-dark-border-color"
 					} hover:bg-primary-color dark:hover:bg-primary-color hover:text-black dark:hover:text-white transition-all font-roboto`}
@@ -58,7 +64,7 @@ const ProjectContainer = () => {
 				<button
 					onClick={() => dispatch(setActiveCategory("all"))}
 					className={`category-btn w-full md:w-[130px] text-black dark:text-white font-bold text-[13px] md:text-base shadow-card-shadow shadow-primary-color/40 py-2 px-4 rounded-lg ${
-						activeCategory === "all"
+						projects.activeCategory === "all"
 							? "bg-primary-color text-black"
 							: "bg-light-border-color dark:bg-dark-border-color"
 					} hover:bg-primary-color dark:hover:bg-primary-color hover:text-black dark:hover:text-white transition-all`}
@@ -67,18 +73,18 @@ const ProjectContainer = () => {
 				</button>
 			</nav>
 			<main className="projects-container grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-				{filteredProjects.map((project, index) => (
+				{projects.filteredProjects.map((project, index) => (
 					<div
 						key={index}
 						className="project-card bg-light-border-color dark:bg-dark-card-color rounded-lg shadow-card-shadow relative group"
-						aria-label={project.projectTitle}
+						aria-label={lang === "ar" ? project.projectTitle.ar : project.projectTitle.en}
 					>
 						<div className="image relative">
 							<img
-								src={project.projectImage}
-								alt={project.projectTitle}
+								src={typeof project.projectImage === 'string' ? project.projectImage : ((project.projectImage as unknown) as { url: string }).url}
+								alt={lang === "ar" ? project.projectTitle.ar : project.projectTitle.en}
 								width="100%"
-								height={130}
+								height={140}
 								onError={(e) => {
 									const target = e.target as HTMLImageElement;
 									target.onerror = null;
@@ -116,15 +122,15 @@ const ProjectContainer = () => {
 								</div>
 							</div>
 						</div>
-						<div className="text flex flex-col gap-1 p-3 md:px-6 md:py-4">
+						<div className="text flex flex-col gap-1 p-3 md:px-4 md:py-3">
 							<span className="text-primary-color uppercase font-bold sm:text-lg text-base block">
-								{project.category}
+								{lang === "ar" ? project.category.ar : project.category.en}
 							</span>
 							<h3 className="sm:text-[28px] text-2xl font-bold text-black dark:text-white">
-								{project.projectTitle}
+								{lang === "ar" ? project.projectTitle.ar : project.projectTitle.en}
 							</h3>
-							<p className="sm:text-base text-sm text-black dark:text-white opacity-80">
-								{project.projectSubtitle}
+							<p className="sm:text-sm text-[12px] pt-1 text-black dark:text-white opacity-80">
+								{lang === "ar" ? project.projectSubtitle.ar : project.projectSubtitle.en}
 							</p>
 						</div>
 					</div>

@@ -1,0 +1,16 @@
+{
+  "home": "الرئيسية",
+  "projects": "معرض اعمالي",
+  "blogs": "المدونات",
+  "adminTitle": "إدارة المدونات",
+  "addBlog": "+ إضافة مدونة",
+  "blogTitle": "عنوان المدونة",
+  "description": "الوصف",
+  "publishDate": "تاريخ النشر",
+  "actions": "الإجراءات",
+  "edit": "تعديل",
+  "delete": "حذف",
+  "deleteConfirmation": "هل أنت متأكد من حذف هذه المدونة؟",
+  "loading": "جاري التحميل...",
+  "error": "خطأ: {{error}}"
+}

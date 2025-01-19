@@ -5,6 +5,7 @@
 		"moduleResolution": "Node",
 		"strict": true,
 		"jsx": "react-jsx",
+		"types": ["vite-plugin-svgr/client"],
 		"esModuleInterop": true,
 		"skipLibCheck": true,
 		"forceConsistentCasingInFileNames": true,
@@ -19,6 +20,7 @@
 			"@routes/*": ["src/routes/*"],
 			"@store/*": ["src/store/*"],
 			"@styles/*": ["src/styles/*"],
+			"@services/*": ["src/services/*"],
 			"@customTypes/*": ["src/types/*"]
 		}
 	},

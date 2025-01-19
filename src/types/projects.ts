@@ -1,9 +1,20 @@
-export type TProject = {
-  id: number;
-  projectTitle: string;
-  projectSubtitle: string;
+export interface TProject {
+  _id?: string;
+  projectTitle: {
+    ar: string;
+    en: string;
+  };
+  projectSubtitle: {
+    ar: string;
+    en: string;
+  };
   projectURL: string;
   projectGithubURL: string;
-  projectImage: string;
-  category: string;
-};
+  projectImage: File | string;
+  category: {
+    ar: string;
+    en: string;
+  };
+  createdAt?: string;
+  updatedAt?: string;
+}

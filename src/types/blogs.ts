@@ -1,11 +1,22 @@
 import { TLoading } from "./general";
 
 export type TBlog = {
-  id: number;
-  title: string;
-  description: string;
-  content: string;
+  _id?: string;
+  title: {
+    ar: string;
+    en: string;
+  };
+  description: {
+    ar: string;
+    en: string;
+  };
+  content: {
+    ar: string;
+    en: string;
+  };
   publishedDate: string;
+  createdAt?: string;
+  updatedAt?: string;
 }
 
 export interface initialStateType {

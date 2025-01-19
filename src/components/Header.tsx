@@ -1,4 +1,6 @@
 import React, { Dispatch, SetStateAction, Suspense } from "react";
+import Arabic from "../assets/arabic.svg?react"
+import English from "../assets/english.svg?react"
 import { useTranslation } from "react-i18next";
 
 // Lazy load icons
@@ -48,7 +50,7 @@ const Header = ({ theme, lang, setLang, toggleTheme }: HeaderProps) => {
 		<header className="bg-light-container-color dark:bg-dark-container-color border-[2px] border-light-border-color dark:border-dark-border-color py-8 px-5 rounded-lg w-full">
 			<div className="profile flex items-center gap-5 justify-center">
 				<img
-					src="/assets/profile.webp"
+					src="/images/profile.webp"
 					className="sm:w-[75px] sm:h-[75px] w-[65px] h-[65px] border-[3px] border-primary-color rounded-full"
 					alt="صورة يوسف سامح، مطور واجهات أمامية"
 					width="75"
@@ -69,7 +71,7 @@ const Header = ({ theme, lang, setLang, toggleTheme }: HeaderProps) => {
 					</h2>
 				</div>
 			</div>
-			<span className="w-full h-[2px] bg-light-border-color dark:bg-dark-border-color block sm:my-7 my-4" />
+			<span className="w-full h-[2px] bg-light-border-color dark:bg-dark-border-color block sm:my-6 my-4" />
 			<div className="details flex flex-col justify-around md:flex-row lg:flex-col gap-6">
 				<div className="email flex items-center gap-1">
 					<div
@@ -114,7 +116,7 @@ const Header = ({ theme, lang, setLang, toggleTheme }: HeaderProps) => {
 					</div>
 				</div>
 			</div>
-			<span className="w-full h-[2px] bg-light-border-color dark:bg-dark-border-color block sm:my-7 my-4" />
+			<span className="w-full h-[2px] bg-light-border-color dark:bg-dark-border-color block sm:my-6 my-4" />
 			<div className="fast-links flex flex-wrap items-center justify-between gap-1">
 				<Suspense fallback={<div>Loading...</div>}>
 					<div className="card whatsapp bg-light-card-color dark:bg-dark-card-color p-3 rounded-lg shadow-card-shadow w-fit">
@@ -172,19 +174,15 @@ const Header = ({ theme, lang, setLang, toggleTheme }: HeaderProps) => {
         >
           {lang === "en" ? (
             <Suspense fallback={<div>...</div>}>
-              <img
-                src="/assets/ar.png"
+              <Arabic
                 className="sm:w-[30px] sm:h-[30px] w-[25px] h-[25px]"
-								alt="Change To Arabic Language"
 							/>
               <h5 className="text-lg font-bold text-black dark:text-white font-tajawal">العربية</h5>
             </Suspense>
           ) : (
 						<Suspense fallback={<div>...</div>}>
-              <img
-                src="/assets/en.png"
+              <English
                 className="sm:w-[30px] sm:h-[30px] w-[25px] h-[25px]"
-								alt="Change To English Language"
 							/>
               <h5 className="text-lg font-bold text-black dark:text-white font-poppins">English</h5>
             </Suspense>
@@ -192,9 +190,9 @@ const Header = ({ theme, lang, setLang, toggleTheme }: HeaderProps) => {
         </button>
 
       </div>
-			<span className="w-full h-[2px] bg-light-border-color dark:bg-dark-border-color block sm:my-7 my-4" />
+			<span className="w-full h-[2px] bg-light-border-color dark:bg-dark-border-color block sm:my-6 my-4" />
 			<footer>
-				<div className="footer-content mt-6 text-center">
+				<div className="footer-content mt-3 text-center">
 					<p className="text-sm text-primary-color opacity-80 font-bold hover:opacity-100 transition-opacity cursor-pointer">
 						{t('copyrights')}
 					</p>

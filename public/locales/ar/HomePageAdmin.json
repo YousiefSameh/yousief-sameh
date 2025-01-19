@@ -1,0 +1,8 @@
+{
+  "home": "الرئيسية",
+  "projects": "معرض اعمالي",
+  "blogs": "المدونات",
+  "adminTitle": "صفحة الرئيسيه للادمن",
+  "projectsCount": "عدد المشاريع: {{count}}",
+  "blogsCount": "عدد المدونات: {{count}}"
+}

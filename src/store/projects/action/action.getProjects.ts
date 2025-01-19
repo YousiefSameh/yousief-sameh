@@ -1,26 +1,14 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
-import { TProject } from "../../../types/projects";
+import { fetchProjects } from "@services/projects.services";
 
-type TResponse = TProject[];
-
-const actionGetProjects = createAsyncThunk(
-  "projects/actGetProjects",
-  async (_, thunkAPI) => {
-    const { rejectWithValue } = thunkAPI;
+export const actionGetProjects = createAsyncThunk(
+  "projects/fetchProjects",
+  async (_, { rejectWithValue }) => {
     try {
-      const response = await axios.get<TResponse>(
-        `http://localhost:5005/api/projects`
-      );
-      return response.data;
+      const projects = await fetchProjects();
+      return projects;
     } catch (error) {
-      if (axios.isAxiosError(error)) {
-        return rejectWithValue(error.response?.data.message || error.message);
-      } else {
-        return rejectWithValue("An unexpected error");
-      }
+      return rejectWithValue((error as Error).message || "Failed to fetch projects");
     }
   }
 );
-
-export default actionGetProjects;

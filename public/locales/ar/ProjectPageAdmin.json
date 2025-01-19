@@ -1,0 +1,33 @@
+{
+  "projects": {
+    "title": "إدارة المشاريع",
+    "addProject": "إضافة مشروع",
+    "editProject": "تعديل مشروع",
+    "projectTitle": "عنوان المشروع",
+    "category": "الفئة",
+    "projectURL": "رابط المشروع",
+    "githubURL": "رابط GitHub",
+    "actions": "الإجراءات",
+    "view": "عرض",
+    "edit": "تعديل",
+    "delete": "حذف",
+    "cancel": "إلغاء",
+    "deleteConfirmationTitle": "تأكيد الحذف",
+    "deleteConfirmationSubtitle": "هل أنت متأكد من حذف هذا المشروع؟",
+    "saveChanges": "حفظ التعديلات",
+    "addProjectButton": "إضافة مشروع",
+    "projectTitleAr": "عنوان المشروع (العربية)",
+    "projectTitleEn": "عنوان المشروع (الإنجليزية)",
+    "projectSubtitleAr": "وصف المشروع (العربية)",
+    "projectSubtitleEn": "وصف المشروع (الإنجليزية)",
+    "projectImage": "صورة المشروع",
+    "categoryAr": "الفئة (العربية)",
+    "categoryEn": "الفئة (الإنجليزية)"
+  },
+  "general": {
+    "home": "الرئيسية",
+    "projects": "معرض اعمالي",
+    "blogs": "المدونات",
+    "contact": "تواصل معي"
+  }
+}

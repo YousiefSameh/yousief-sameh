@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react';
 import viteCompression from 'vite-plugin-compression';
 import { imagetools } from 'vite-imagetools';
 import tsconfigPaths from 'vite-tsconfig-paths';
+import svgr from "vite-plugin-svgr";
 
 export default defineConfig({
   plugins: [
@@ -14,6 +15,7 @@ export default defineConfig({
     }),
     imagetools(),
     tsconfigPaths(),
+    svgr(),
   ],
 
   build: {

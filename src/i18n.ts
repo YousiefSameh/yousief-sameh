@@ -18,18 +18,48 @@ import homeAR from "../public/locales/ar/home.json";
 import contactEN from "../public/locales/en/contact.json";
 import contactAR from "../public/locales/ar/contact.json";
 
+// HomePageAdmin
+import homePageAdminEN from "../public/locales/en/HomePageAdmin.json";
+import homePageAdminAR from "../public/locales/ar/HomePageAdmin.json";
+
+// ProjectPageAdmin
+import projectsPageAdminEN from "../public/locales/en/ProjectPageAdmin.json";
+import projectsPageAdminAR from "../public/locales/ar/ProjectPageAdmin.json";
+
+// ProjectPageAdmin
+import blogsPageAdminEN from "../public/locales/en/BlogsPageAdmin.json";
+import blogsPageAdminAR from "../public/locales/ar/BlogsPageAdmin.json";
+
+// AddOrEditProjects
+import addOrEditProjectsEN from "../public/locales/en/AddOrEditProjects.json";
+import addOrEditProjectsAR from "../public/locales/ar/AddOrEditProjects.json";
+
+// AddOrEditBlogs
+import addOrEditBlogsEN from "../public/locales/en/AddOrEditBlogs.json";
+import addOrEditBlogsAR from "../public/locales/ar/AddOrEditBlogs.json";
+
 const resources = {
   ar: {
     header: headerAR,
     navLinks: navLinksAR,
     home: homeAR,
     contact: contactAR,
+    homePageAdmin: homePageAdminAR,
+    projectPageAdmin: projectsPageAdminAR,
+    blogsPageAdmin: blogsPageAdminAR,
+    addOrEditProjects: addOrEditProjectsAR,
+    addOrEditBlogs: addOrEditBlogsAR,
   },
   en: {
     header: headerEN,
     navLinks: navLinksEN,
     home: homeEN,
     contact: contactEN,
+    homePageAdmin: homePageAdminEN,
+    projectPageAdmin: projectsPageAdminEN,
+    blogsPageAdmin: blogsPageAdminEN,
+    addOrEditProjects: addOrEditProjectsEN,
+    addOrEditBlogs: addOrEditBlogsEN,
   },
 };
 

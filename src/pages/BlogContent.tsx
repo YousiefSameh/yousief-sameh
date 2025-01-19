@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 const BlogContent = () => {
 	const { id } = useParams<{ id: string }>();
 	const { blogs } = useSelector(() => store.getState().blogs);
-	const blog = blogs.find((blog: TBlog) => blog.id === parseInt(id || "", 10));
+	const blog = blogs.find((blog: TBlog) => blog._id === String(id));
 
 	const { t } = useTranslation("navLinks");
 	const [lang, setLang] = useState("");
@@ -87,7 +87,7 @@ const BlogContent = () => {
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6, ease: "easeOut" }}
 				>
-					{blog.title}
+					{lang == "ar" ? blog.title.ar : blog.title.en}
 				</motion.h2>
 				<motion.p
 					className="sm:text-base text-sm leading-relaxed text-black dark:text-white opacity-80"
@@ -95,7 +95,7 @@ const BlogContent = () => {
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
 				>
-					{blog.description}
+					{lang == "ar" ? blog.description.ar : blog.description.en}
 				</motion.p>
 				<motion.span
 					className="line w-full sm:my-8 my-4 block border-t border-light-border-color dark:border-dark-border-color"
@@ -110,7 +110,7 @@ const BlogContent = () => {
 					transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
 				>
 					<p className="sm:text-lg text-base text-black dark:text-white my-4 leading-loose">
-						{blog.content}
+						{lang == "ar" ? blog.content.ar : blog.content.en}
 					</p>
 				</motion.div>
 			</div>

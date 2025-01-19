@@ -1,0 +1,32 @@
+{
+  "projects": {
+    "title": "Projects Management",
+    "addProject": "Add Project",
+    "projectTitle": "Project Title",
+    "category": "Category",
+    "projectURL": "Project URL",
+    "githubURL": "GitHub URL",
+    "actions": "Actions",
+    "view": "View",
+    "edit": "Edit",
+    "delete": "Delete",
+    "cancel": "Cancel",
+    "deleteConfirmationTitle": "Delete Confirmation",
+    "deleteConfirmationSubtitle": "Are you sure you want to delete this project?",
+    "saveChanges": "Save Changes",
+    "addProjectButton": "Add Project",
+    "projectTitleAr": "Project Title (Arabic)",
+    "projectTitleEn": "Project Title (English)",
+    "projectSubtitleAr": "Project Subtitle (Arabic)",
+    "projectSubtitleEn": "Project Subtitle (English)",
+    "projectImage": "Project Image",
+    "categoryAr": "Category (Arabic)",
+    "categoryEn": "Category (English)"
+  },
+  "general": {
+    "home": "Home",
+    "projects": "Projects",
+    "blogs": "Blogs",
+    "contact": "Contact"
+  }
+}

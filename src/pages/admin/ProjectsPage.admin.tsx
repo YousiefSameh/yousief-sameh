@@ -1,16 +1,26 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { SpecialHeader } from '@components/index';
-import { useState } from 'react';
-import { TProject } from '@customTypes/projects';
-import { deleteProject } from '@store/projects/projects.slice';
-import DeleteModal from '@components/DeleteModel';
-import { RootState } from '@store/store';
+import { useAppDispatch, useAppSelector } from "@store/hooks";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import { SpecialHeader } from "@components/index";
+import { useEffect, useState } from "react";
+import { TProject } from "@customTypes/projects";
+import { actionDeleteProject, actionGetProjects } from "@store/projects/projects.slice";
+import DeleteModal from "@components/DeleteModel";
+import { useTranslation } from "react-i18next";
 
-const ProjectsPageAdmin = () => {
-  const projects = useSelector((state: RootState) => state.projects.projects);
-  const dispatch = useDispatch();
+const ProjectsPageAdmin: React.FC = () => {
+  const projects = useAppSelector((state) => state.projects);
+  const dispatch = useAppDispatch();
+  
+  const { t } = useTranslation("projectPageAdmin");
+  const [lang, setLang] = useState("");
+  
+  useEffect(() => {
+    const Lng = localStorage.getItem("i18nextLng");
+    if (Lng) {
+      setLang(Lng);
+    }
+  }, [localStorage.getItem("i18nextLng")]);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState<TProject | null>(null);
@@ -21,12 +31,21 @@ const ProjectsPageAdmin = () => {
   };
 
   const handleConfirmDelete = () => {
-    if (selectedProject) {
-      dispatch(deleteProject(selectedProject.id));
-      setIsModalOpen(false);
-      setSelectedProject(null);
+    if (selectedProject && selectedProject._id) {
+      dispatch(actionDeleteProject(selectedProject._id));
     }
+    setIsModalOpen(false);
+    setSelectedProject(null);
   };
+
+  useEffect(() => {
+    if (projects.projects.length === 0) {
+      dispatch(actionGetProjects());
+    }
+  }, [dispatch, projects.projects.length]);
+
+  if (projects.loading === 'pending') return <div>Loading...</div>;
+  if (projects.error) return <div>Error: {projects.error}</div>;
 
   return (
     <main
@@ -35,8 +54,12 @@ const ProjectsPageAdmin = () => {
       aria-labelledby="admin-title"
     >
       <nav
-        className="bg-light-border-color dark:bg-dark-border-color px-3 md:px-6 py-3 rounded-s-md rounded-tl-md rounded-tr-md md:rounded-tr-none w-full md:w-fit absolute top-0 left-0"
-        aria-label="الرئيسية"
+        className={`bg-light-border-color dark:bg-dark-border-color px-3 md:px-6 py-3 w-full md:w-fit absolute top-0 rounded-s-md ${
+					lang === "ar"
+						? "left-0 rounded-tl-md rounded-tr-md md:rounded-tr-none"
+						: "right-0 rounded-tr-md rounded-tl-md md:rounded-tl-none"
+				}`}
+        aria-label={t("general.home")}
       >
         <ul className="flex flex-wrap items-center justify-center gap-3 md:gap-5">
           <li>
@@ -45,7 +68,7 @@ const ProjectsPageAdmin = () => {
               className="text-black dark:text-white font-bold hover:text-primary-color dark:hover:text-primary-color transition-colors text-sm md:text-base"
               aria-current="page"
             >
-              الرئيسية
+              {t("general.home")}
             </Link>
           </li>
           <li>
@@ -53,7 +76,7 @@ const ProjectsPageAdmin = () => {
               to="/admin/projects"
               className="text-black dark:text-white font-bold hover:text-primary-color dark:hover:text-primary-color transition-colors text-sm md:text-base"
             >
-              معرض اعمالي
+              {t("general.projects")}
             </Link>
           </li>
           <li>
@@ -61,26 +84,23 @@ const ProjectsPageAdmin = () => {
               to="/admin/blogs"
               className="text-black dark:text-white font-bold hover:text-primary-color dark:hover:text-primary-color transition-colors text-sm md:text-base"
             >
-              المدونات
+              {t("general.blogs")}
             </Link>
           </li>
         </ul>
       </nav>
 
-      {/* محتوى الصفحة */}
       <div className="content mx-auto p-4 md:p-6">
-        {/* عنوان الصفحة مع زر الإضافة */}
         <div className="flex flex-wrap justify-between items-center gap-3 mb-6 mt-0 md:mt-2">
-          <SpecialHeader title="إدارة المشاريع" id="admin-title" />
+          <SpecialHeader title={t('projects.title')} id="admin-title" />
           <Link
             to="/admin/projects/add"
             className="bg-primary-color hover:bg-hover-color text-white px-3 py-2 mt-5 md:mt-0 rounded-lg transition-colors text-sm md:text-base"
           >
-            + إضافة مشروع
+            + {t('projects.addProject')}
           </Link>
         </div>
 
-        {/* جدول المشاريع */}
         <div className="overflow-x-auto">
           <motion.table
             className="min-w-full bg-transparent shadow-lg border border-primary-color rounded-lg mt-4 md:mt-8"
@@ -90,24 +110,38 @@ const ProjectsPageAdmin = () => {
           >
             <thead className="bg-primary-color">
               <tr>
-                <th className="px-4 py-2 font-medium text-white text-right text-sm md:text-base">عنوان المشروع</th>
-                <th className="px-4 py-2 font-medium text-white text-right text-sm md:text-base">الفئة</th>
-                <th className="px-4 py-2 font-medium text-white text-right text-sm md:text-base">رابط المشروع</th>
-                <th className="px-4 py-2 font-medium text-white text-right text-sm md:text-base">رابط GitHub</th>
-                <th className="px-4 py-2 font-medium text-white text-right text-sm md:text-base">الإجراءات</th>
+                <th className={`px-4 py-2 font-medium text-white ${lang === "ar" ? "text-right" : "text-left"} text-sm md:text-base`}>
+                  {t('projects.projectTitle')}
+                </th>
+                <th className={`px-4 py-2 font-medium text-white ${lang === "ar" ? "text-right" : "text-left"} text-sm md:text-base`}>
+                  {t('projects.category')}
+                </th>
+                <th className={`px-4 py-2 font-medium text-white ${lang === "ar" ? "text-right" : "text-left"} text-sm md:text-base`}>
+                  {t('projects.projectURL')}
+                </th>
+                <th className={`px-4 py-2 font-medium text-white ${lang === "ar" ? "text-right" : "text-left"} text-sm md:text-base`}>
+                  {t('projects.githubURL')}
+                </th>
+                <th className={`px-4 py-2 font-medium text-white ${lang === "ar" ? "text-right" : "text-left"} text-sm md:text-base`}>
+                  {t('projects.actions')}
+                </th>
               </tr>
             </thead>
             <tbody>
-              {projects.map((project) => (
+              {projects.projects.map((project) => (
                 <motion.tr
-                  key={project.id}
+                  key={project._id}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.3 }}
                   className="border-b border-light-border-color dark:border-dark-border-color hover:bg-hover-color/20 dark:hover:bg-hover-color/20"
                 >
-                  <td className="px-4 py-2 text-black dark:text-white text-sm md:text-base">{project.projectTitle}</td>
-                  <td className="px-4 py-2 text-black dark:text-white text-sm md:text-base">{project.category}</td>
+                  <td className="px-4 py-2 text-black dark:text-white text-sm md:text-base">
+                    {lang === "ar" ? project.projectTitle.ar : project.projectTitle.en}
+                  </td>
+                  <td className="px-4 py-2 text-black dark:text-white text-sm md:text-base">
+                    {lang === "ar" ? project.category.ar : project.category.en}
+                  </td>
                   <td className="px-4 py-2">
                     <a
                       href={project.projectURL}
@@ -115,7 +149,7 @@ const ProjectsPageAdmin = () => {
                       rel="noopener noreferrer"
                       className="text-blue-500 dark:text-blue-300 hover:underline text-sm md:text-base"
                     >
-                      عرض
+                      {t('projects.view')}
                     </a>
                   </td>
                   <td className="px-4 py-2">
@@ -125,22 +159,22 @@ const ProjectsPageAdmin = () => {
                       rel="noopener noreferrer"
                       className="text-blue-500 dark:text-blue-300 hover:underline text-sm md:text-base"
                     >
-                      عرض
+                      {t('projects.view')}
                     </a>
                   </td>
                   <td className="px-4 py-2">
                     <div className="flex flex-wrap gap-2">
                       <Link
-                        to={`/admin/projects/edit/${project.id}`}
+                        to={`/admin/projects/edit/${project._id}`}
                         className="text-yellow-500 dark:text-yellow-300 hover:text-yellow-700 text-sm md:text-base"
                       >
-                        تعديل
+                        {t('projects.edit')}
                       </Link>
                       <button
                         className="text-red-500 dark:text-red-300 hover:text-red-700 text-sm md:text-base"
                         onClick={() => handleDeleteClick(project)}
-                      >
-                        حذف
+                        >
+                        {t('projects.delete')}
                       </button>
                     </div>
                   </td>
@@ -150,11 +184,14 @@ const ProjectsPageAdmin = () => {
           </motion.table>
         </div>
       </div>
+
       <DeleteModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         onConfirm={handleConfirmDelete}
-        projectTitle={selectedProject?.projectTitle || ""}
+        title={
+          lang === "ar" ? selectedProject?.projectTitle.ar || "" : selectedProject?.projectTitle.en || ""
+        }
       />
     </main>
   );

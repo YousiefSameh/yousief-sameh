@@ -1,0 +1,19 @@
+{
+  "general": {
+    "home": "Home",
+    "projects": "Projects",
+    "blogs": "Blogs"
+  },
+  "blogs": {
+    "editBlog": "Edit Blog",
+    "addBlog": "Add Blog",
+    "titleAr": "Blog Title (Arabic)",
+    "titleEn": "Blog Title (English)",
+    "descriptionAr": "Blog Description (Arabic)",
+    "descriptionEn": "Blog Description (English)",
+    "contentAr": "Blog Content (Arabic)",
+    "contentEn": "Blog Content (English)",
+    "saveChanges": "Save Changes",
+    "addBlogButton": "Add Blog"
+  }
+}
