@@ -1,107 +1,155 @@
+import { lazy, Suspense } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
 // layouts
-import MainLayout from "@layout/main.layout";
+const MainLayout = lazy(() => import("@layout/main.layout"));
 // components
-import AdminRoute from "@components/AdminRoute";
+const AdminRoute = lazy(() => import("@components/AdminRoute"));
 
 // pages
-import Home from "@pages/Home";
-import Projects from "@pages/Projects";
-import Blogs from "@pages/Blogs";
-import Contact from "@pages/Contact";
-import Error from "@pages/Error";
-import BlogContent from "@pages/BlogContent";
-import HomePageAdmin from "@pages/admin/HomePage.admin";
-import ProjectsPageAdmin from "@pages/admin/ProjectsPage.admin";
-import AddProjectAdmin from "@pages/admin/AddOrEditProject";
-import BlogsPageAdmin from "@pages/admin/BlogsPage.admin";
-import AddOrEditBlog from "@pages/admin/AddOrEditBlog";
-import LoginPageAdmin from "@pages/admin/LoginPage.admin";
+const Home = lazy(() => import("@pages/Home"));
+const Projects = lazy(() => import("@pages/Projects"));
+const Blogs = lazy(() => import("@pages/Blogs"));
+const Contact = lazy(() => import("@pages/Contact"));
+const Error = lazy(() => import("@pages/Error"));
+const BlogContent = lazy(() => import("@pages/BlogContent"));
+const HomePageAdmin = lazy(() => import("@pages/admin/HomePage.admin"));
+const ProjectsPageAdmin = lazy(() => import("@pages/admin/ProjectsPage.admin"));
+const AddProjectAdmin = lazy(() => import("@pages/admin/AddOrEditProject"));
+const BlogsPageAdmin = lazy(() => import("@pages/admin/BlogsPage.admin"));
+const AddOrEditBlog = lazy(() => import("@pages/admin/AddOrEditBlog"));
+const LoginPageAdmin = lazy(() => import("@pages/admin/LoginPage.admin"));
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <MainLayout />,
-    errorElement: <Error />,
+    element: (
+      <Suspense fallback={<div>Loading...</div>}>
+        <MainLayout />
+      </Suspense>
+    ),
+    errorElement: (
+      <Suspense fallback={<div>Loading...</div>}>
+        <Error />
+      </Suspense>
+    ),
     children: [
       {
         index: true,
-        element: <Home />,
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <Home />
+          </Suspense>
+        ),
       },
       {
         path: "projects",
-        element: <Projects />,
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <Projects />
+          </Suspense>
+        ),
       },
       {
         path: "blogs",
-        element: <Blogs />,
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <Blogs />
+          </Suspense>
+        ),
       },
       {
         path: "blogs/blog/:id",
-        element: <BlogContent />,
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <BlogContent />
+          </Suspense>
+        ),
       },
       {
         path: "contact",
-        element: <Contact />,
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <Contact />
+          </Suspense>
+        ),
       },
       {
         path: "admin/login",
-        element: <LoginPageAdmin />,
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <LoginPageAdmin />
+          </Suspense>
+        ),
       },
       {
         path: "admin/home",
         element: (
-          <AdminRoute>
-            <HomePageAdmin />
-          </AdminRoute>
+          <Suspense fallback={<div>Loading...</div>}>
+            <AdminRoute>
+              <HomePageAdmin />
+            </AdminRoute>
+          </Suspense>
         ),
       },
       {
         path: "admin/projects",
         element: (
-          <AdminRoute>
-            <ProjectsPageAdmin />
-          </AdminRoute>
+          <Suspense fallback={<div>Loading...</div>}>
+            <AdminRoute>
+              <ProjectsPageAdmin />
+            </AdminRoute>
+          </Suspense>
         ),
       },
       {
         path: "admin/projects/add",
         element: (
-          <AdminRoute>
-            <AddProjectAdmin />
-          </AdminRoute>
+          <Suspense fallback={<div>Loading...</div>}>
+            <AdminRoute>
+              <AddProjectAdmin />
+            </AdminRoute>
+          </Suspense>
         ),
       },
       {
         path: "admin/projects/edit/:projectId",
         element: (
-          <AdminRoute>
-            <AddProjectAdmin />
-          </AdminRoute>
+          <Suspense fallback={<div>Loading...</div>}>
+            <AdminRoute>
+              <AddProjectAdmin />
+            </AdminRoute>
+          </Suspense>
         ),
       },
       {
         path: "admin/blogs",
         element: (
-          <AdminRoute>
-            <BlogsPageAdmin />
-          </AdminRoute>
+          <Suspense fallback={<div>Loading...</div>}>
+            <AdminRoute>
+              <BlogsPageAdmin />
+            </AdminRoute>
+          </Suspense>
         ),
       },
       {
         path: "admin/blogs/add",
         element: (
-          <AdminRoute>
-            <AddOrEditBlog />
-          </AdminRoute>
+          <Suspense fallback={<div>Loading...</div>}>
+            <AdminRoute>
+              <AddOrEditBlog />
+            </AdminRoute>
+          </Suspense>
         ),
       },
       {
         path: "admin/blogs/edit/:blogId",
         element: (
-          <AdminRoute>
-            <AddOrEditBlog />
-          </AdminRoute>
+          <Suspense fallback={<div>Loading...</div>}>
+            <AdminRoute>
+              <AddOrEditBlog />
+            </AdminRoute>
+          </Suspense>
         ),
       },
     ],

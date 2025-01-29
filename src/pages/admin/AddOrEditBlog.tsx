@@ -1,25 +1,19 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link, useParams } from "react-router";
 import { TBlog } from "@customTypes/blogs";
 import { SpecialHeader } from "@components/index";
 import { useAppDispatch, useAppSelector } from "@store/hooks";
 import { actionAddBlog } from "@store/blogs/action/action.addBlog";
 import { actionEditBlog } from "@store/blogs/action/action.editBlog";
-import { useTranslation } from "react-i18next";
+import useAppTranslate from "src/hooks/useAppTranslate";
 
 const AddOrEditBlog = () => {
   const dispatch = useAppDispatch();
   const { blogId } = useParams<{ blogId: string }>();
   const blogs = useAppSelector((state) => state.blogs.blogs);
-  const { t } = useTranslation("addOrEditBlogs");
-  const [lang, setLang] = useState("");
-  
-  useEffect(() => {
-    const Lng = localStorage.getItem("i18nextLng");
-    if (Lng) {
-      setLang(Lng);
-    }
-  }, [localStorage.getItem("i18nextLng")]);
+  const { t, lang } = useAppTranslate({
+		path: "addOrEditBlogs"
+	});
 
   const existingBlog = blogs.find((blog: TBlog) => blog._id === String(blogId));
 

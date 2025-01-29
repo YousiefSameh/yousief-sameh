@@ -3,23 +3,16 @@ import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import { TBlog } from "@customTypes/blogs";
 import store from "@store/store";
-import { useTranslation } from "react-i18next";
-import { useEffect, useState } from "react";
+import useAppTranslate from "src/hooks/useAppTranslate";
+
 
 const BlogContent = () => {
 	const { id } = useParams<{ id: string }>();
 	const { blogs } = useSelector(() => store.getState().blogs);
 	const blog = blogs.find((blog: TBlog) => blog._id === String(id));
-
-	const { t } = useTranslation("navLinks");
-	const [lang, setLang] = useState("");
-
-	useEffect(() => {
-		const Lng = localStorage.getItem("i18nextLng");
-		if (Lng) {
-			setLang(Lng);
-		}
-	}, [localStorage.getItem("i18nextLng")]);
+	const { t, lang } = useAppTranslate({
+		path: "navLinks"
+	});
 
 	if (!blog) {
 		return (

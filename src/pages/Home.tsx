@@ -1,19 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { Link } from "react-router-dom";
 import { About, Services } from "@components/index";
-import { useTranslation } from "react-i18next";
-import { useEffect, useState } from "react";
+import useAppTranslate from "src/hooks/useAppTranslate";
 
 const Home = () => {
-	const { t } = useTranslation("navLinks");
-	const [lang, setLang] = useState("");
-
-	useEffect(() => {
-		const Lng = localStorage.getItem("i18nextLng");
-		if (Lng) {
-			setLang(Lng);
-		}
-	}, [localStorage.getItem("i18nextLng")]);
+	const { t, lang } = useAppTranslate({
+		path: "navLinks"
+	});
 
 	return (
 		<main

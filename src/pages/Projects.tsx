@@ -1,19 +1,12 @@
 import { Link } from "react-router-dom";
 import { SpecialHeader } from "@components/index";
 import ProjectContainer from "@components/ProjectContainer";
-import { useEffect, useState } from "react";
-import { useTranslation } from "react-i18next";
+import useAppTranslate from "src/hooks/useAppTranslate";
 
 const Projects = () => {
-	const { t } = useTranslation("navLinks");
-	const [lang, setLang] = useState("");
-
-	useEffect(() => {
-		const Lng = localStorage.getItem("i18nextLng");
-		if (Lng) {
-			setLang(Lng);
-		}
-	}, [localStorage.getItem("i18nextLng")]);
+	const { t, lang } = useAppTranslate({
+		path: "navLinks"
+	});
 
 	return (
 		<main

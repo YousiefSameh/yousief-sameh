@@ -1,21 +1,15 @@
+import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "@store/hooks";
 import { Link } from "react-router-dom";
 import { SpecialHeader } from "@components/index";
-import { useEffect, useState } from "react";
-import { useTranslation } from "react-i18next";
 import { actionGetProjects } from "@store/projects/action";
 import { actionGetBlogs } from "@store/blogs/action/action.getBlogs";
+import useAppTranslate from "src/hooks/useAppTranslate";
 
 const HomePageAdmin = () => {
-	const { t } = useTranslation("homePageAdmin");
-	const [lang, setLang] = useState("");
-
-	useEffect(() => {
-		const Lng = localStorage.getItem("i18nextLng");
-		if (Lng) {
-			setLang(Lng);
-		}
-	}, [localStorage.getItem("i18nextLng")]);
+	const { t, lang } = useAppTranslate({
+		path: "homePageAdmin"
+	});
 
 	const { projects } = useAppSelector(
 		(state) => state.projects

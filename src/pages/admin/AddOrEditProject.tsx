@@ -1,24 +1,18 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import { actionAddProject, actionEditProject } from "@store/projects/action";
 import { TProject } from "@customTypes/projects";
 import { Link, useParams } from "react-router-dom";
 import { SpecialHeader } from "@components/index";
 import { useAppDispatch, useAppSelector } from "@store/hooks";
-import { useTranslation } from "react-i18next";
+import useAppTranslate from "src/hooks/useAppTranslate";
 
 const AddOrEditProject = () => {
   const { projectId } = useParams<{ projectId: string }>();
   const projects = useAppSelector((state) => state.projects.projects);
   const dispatch = useAppDispatch();
-  const { t } = useTranslation("addOrEditProjects");
-  const [lang, setLang] = useState("");
-  
-  useEffect(() => {
-    const Lng = localStorage.getItem("i18nextLng");
-    if (Lng) {
-      setLang(Lng);
-    }
-  }, [localStorage.getItem("i18nextLng")]);
+  const { t, lang } = useAppTranslate({
+		path: "addOrEditProjects"
+	});
 
   const existingProject = projects.find(
     (project: TProject) => project._id === String(projectId)

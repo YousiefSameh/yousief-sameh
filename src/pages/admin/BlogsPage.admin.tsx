@@ -7,21 +7,14 @@ import DeleteModal from "@components/DeleteModel";
 import { useAppDispatch, useAppSelector } from "@store/hooks";
 import { actionDeleteBlog } from "@store/blogs/action/action.deleteBlog";
 import { actionGetBlogs } from "@store/blogs/action/action.getBlogs";
-import { useTranslation } from "react-i18next";
+import useAppTranslate from "src/hooks/useAppTranslate";
 
 const BlogsPageAdmin = () => {
   const blogs = useAppSelector((state) => state.blogs);
   const dispatch = useAppDispatch();
-  const { t } = useTranslation("blogsPageAdmin");
-
-  const [lang, setLang] = useState("");
-
-  useEffect(() => {
-    const Lng = localStorage.getItem("i18nextLng");
-    if (Lng) {
-      setLang(Lng);
-    }
-  }, [localStorage.getItem("i18nextLng")]);
+  const { t, lang } = useAppTranslate({
+		path: "blogsPageAdmin"
+	});
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedBlog, setSelectedBlog] = useState<TBlog | null>(null);

@@ -6,21 +6,14 @@ import { useEffect, useState } from "react";
 import { TProject } from "@customTypes/projects";
 import { actionDeleteProject, actionGetProjects } from "@store/projects/projects.slice";
 import DeleteModal from "@components/DeleteModel";
-import { useTranslation } from "react-i18next";
+import useAppTranslate from "src/hooks/useAppTranslate";
 
 const ProjectsPageAdmin: React.FC = () => {
   const projects = useAppSelector((state) => state.projects);
   const dispatch = useAppDispatch();
-  
-  const { t } = useTranslation("projectPageAdmin");
-  const [lang, setLang] = useState("");
-  
-  useEffect(() => {
-    const Lng = localStorage.getItem("i18nextLng");
-    if (Lng) {
-      setLang(Lng);
-    }
-  }, [localStorage.getItem("i18nextLng")]);
+  const { t, lang } = useAppTranslate({
+		path: "projectPageAdmin"
+	});
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState<TProject | null>(null);

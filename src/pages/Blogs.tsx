@@ -1,19 +1,12 @@
 import { Link } from "react-router";
 import { SpecialHeader } from "@components/index";
 import BlogsContainer from "@components/BlogsContainer";
-import { useEffect, useState } from "react";
-import { useTranslation } from "react-i18next";
+import useAppTranslate from "src/hooks/useAppTranslate";
 
 const Blogs = () => {
-	const { t } = useTranslation("navLinks");
-	const [lang, setLang] = useState("");
-
-	useEffect(() => {
-		const Lng = localStorage.getItem("i18nextLng");
-		if (Lng) {
-			setLang(Lng);
-		}
-	}, [localStorage.getItem("i18nextLng")]);
+	const { t, lang } = useAppTranslate({
+		path: "navLinks"
+	});
 	return (
 		<main
 			className="bg-light-container-color dark:bg-dark-container-color border-[2px] border-light-border-color dark:border-dark-border-color p-4 md:p-8 rounded-lg w-full relative"
