@@ -2,8 +2,6 @@
 
 A comprehensive, production-ready portfolio and client management platform built with **Next.js 15**, **Supabase**, and **TailwindCSS v4**.
 
-![Personal Brand Platform](https://placeholder.svg?height=400&width=800&query=personal%20brand%20platform%20hero)
-
 ## Overview
 
 This platform serves as a complete solution for developers, designers, and freelancers to showcase their work, manage client projects, and build their personal brand. It includes a public-facing portfolio website, an admin dashboard for content management, and a client portal for project tracking.
@@ -42,7 +40,6 @@ This platform serves as a complete solution for developers, designers, and freel
 | **Blog CRUD** | Manage blog posts with rich text editing |
 | **Contact Management** | View and respond to contact submissions |
 | **Services Management** | Add/edit service offerings |
-| **Testimonials** | Manage client testimonials with ratings |
 | **Site Settings** | Dynamic content configuration |
 | **Client Portal Management** | Create and manage client projects |
 
@@ -75,13 +72,12 @@ This platform serves as a complete solution for developers, designers, and freel
 ### Animations
 - **CSS Animations** — Fade-up, scale, slide effects
 - **Intersection Observer** — Scroll-triggered reveals
-- **3D Transforms** — Interactive tilt effects on cards
 
 ---
 
 ## Project Structure
 
-\`\`\`
+```plain
 ├── app/
 │   ├── (public)/              # Public routes with main layout
 │   │   ├── page.tsx           # Home page
@@ -95,7 +91,6 @@ This platform serves as a complete solution for developers, designers, and freel
 │   │   ├── blog/              # Blog management
 │   │   ├── contacts/          # Contact submissions
 │   │   ├── services/          # Services management
-│   │   ├── testimonials/      # Testimonials management
 │   │   ├── settings/          # Site settings
 │   │   └── clients/           # Client portal management
 │   ├── auth/                  # Authentication pages
@@ -116,13 +111,9 @@ This platform serves as a complete solution for developers, designers, and freel
 │   ├── supabase/              # Supabase client utilities
 │   ├── types.ts               # TypeScript interfaces
 │   └── utils.ts               # Utility functions
-├── scripts/                   # Database migration scripts
-│   ├── 001_create_database_schema.sql
-│   ├── 002_enable_rls_policies.sql
-│   ├── 003_seed_initial_data.sql
-│   └── 004_add_gallery_images_column.sql
+├── scripts                    # Database migration scripts
 └── proxy.ts                   # Supabase auth proxy
-\`\`\`
+```
 
 ---
 
@@ -135,7 +126,6 @@ This platform serves as a complete solution for developers, designers, and freel
 | `projects` | Portfolio projects with rich descriptions, tech stacks, and gallery images |
 | `blog_posts` | Blog articles with categories, tags, and featured images |
 | `services` | Service offerings with pricing |
-| `testimonials` | Client testimonials with ratings |
 | `contact_submissions` | Contact form submissions |
 | `skills` | Skills/technologies for the skills section |
 | `site_settings` | Dynamic site configuration |
@@ -169,40 +159,40 @@ All tables are protected with RLS policies:
 ### Setup Steps
 
 1. **Clone the repository**
-   \`\`\`bash
+   ```bash
    git clone https://github.com/yourusername/personal-brand-platform.git
    cd personal-brand-platform
-   \`\`\`
+   ```
 
 2. **Install dependencies**
-   \`\`\`bash
+   ```bash
    npm install
-   \`\`\`
+   ```
 
 3. **Connect Supabase**
    - Create a new Supabase project
    - Connect via the v0 integrations panel or manually add environment variables
 
 4. **Set up environment variables**
-   \`\`\`env
+   ```env
    NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
    NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
    SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
-   \`\`\`
+   ```
 
 5. **Run database migrations**
    Execute the SQL scripts in order:
-   \`\`\`
+   ```plain
    scripts/001_create_database_schema.sql
    scripts/002_enable_rls_policies.sql
    scripts/003_seed_initial_data.sql
    scripts/004_add_gallery_images_column.sql
-   \`\`\`
+   ```
 
 6. **Start the development server**
-   \`\`\`bash
+   ```bash
    npm run dev
-   \`\`\`
+   ```
 
 7. **Create admin account**
    Navigate to `/auth/sign-up` and create your admin account
@@ -275,26 +265,6 @@ All tables are protected with RLS policies:
 3. Add environment variables
 4. Deploy
 
-### Other Platforms
-
-The app can be deployed to any platform supporting Next.js:
-- Netlify
-- AWS Amplify
-- Railway
-- Self-hosted with Node.js
-
----
-
-## Roadmap
-
-- [ ] Dark/Light theme toggle
-- [ ] Email notifications for contact form
-- [ ] Analytics dashboard
-- [ ] Multi-language support (i18n)
-- [ ] Client portal chat/messaging
-- [ ] Invoice generation
-- [ ] Calendar integration for bookings
-
 ---
 
 ## Contributing
@@ -318,10 +288,6 @@ This project is licensed under the MIT License — see the [LICENSE](LICENSE) fi
 ## Author
 
 **Yousief Sameh**
-
-- Website: [yousiefsameh.com](https://yousiefsameh.com)
-- GitHub: [@yousiefsameh](https://github.com/yousiefsameh)
-- LinkedIn: [Yousief Sameh](https://linkedin.com/in/yousiefsameh)
 
 ---
 
