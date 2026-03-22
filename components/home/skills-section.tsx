@@ -48,9 +48,9 @@ const skills = [
 ];
 
 const learning = [
-  "Three.js",
-  "WebGL",
-  "Framer Motion",
+  "Backend Fundamentals",
+  "API Designing",
+  "Databse Design",
   "Advanced TypeScript",
   "System Design",
 ];
